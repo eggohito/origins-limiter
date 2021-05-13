@@ -1,0 +1,10 @@
+{
+    "powers": [],
+    "icon": {
+        "item": "minecraft:egg"
+    },
+    "order": 0,
+    "impact": 0,
+    "name": "test",
+    "description": "This origin is for testing purposes only."
+}

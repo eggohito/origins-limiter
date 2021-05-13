@@ -1,0 +1,10 @@
+{
+    "pack": {
+        "pack_format": 6,
+        "version": "v1.0.0",
+        "authors": [
+            "eggohito"
+        ],
+        "description": "A datapack that adds a way to limit certain Origins"
+    }
+}

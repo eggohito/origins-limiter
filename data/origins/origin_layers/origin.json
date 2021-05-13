@@ -1,0 +1,15 @@
+{
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:resource",
+                "resource": "origins-limiter:human_count",
+                "comparison": "<=",
+                "compare_to": 2
+            },
+            "origins": [
+                "origins:test"
+            ]
+        }
+    ]
+}
