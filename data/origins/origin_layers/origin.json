@@ -2,13 +2,12 @@
     "origins": [
         {
             "condition": {
-                "type": "origins:resource",
-                "resource": "origins-limiter:human_count",
-                "comparison": "<=",
-                "compare_to": 2
+                "type": "origins:advancement",
+                "advancement": "origins-limiter:origins/test1",
+                "inverted": true
             },
             "origins": [
-                "origins:test"
+                "origins-limiter:test1"
             ]
         }
     ]

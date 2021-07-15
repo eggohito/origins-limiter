@@ -1,10 +1,10 @@
 {
     "pack": {
-        "pack_format": 6,
-        "version": "v1.0.0",
+        "pack_format": 7,
+        "version": "1.0.0",
         "authors": [
             "eggohito"
         ],
-        "description": "A datapack that adds a way to limit certain Origins"
+        "description": "A datapack that can limit how many players can have a certain origin"
     }
 }
