@@ -1,7 +1,11 @@
 {
     "values": [
         {
-            "id": "origins-limiter:origins/test1",
+            "id": "#origins-limiter:default",
+            "required": false
+        },
+        {
+            "id": "#origins-limiter:custom",
             "required": false
         }
     ]

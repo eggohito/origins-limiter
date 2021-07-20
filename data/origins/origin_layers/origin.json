@@ -2,12 +2,11 @@
     "origins": [
         {
             "condition": {
-                "type": "origins:advancement",
-                "advancement": "origins-limiter:origins/test1",
-                "inverted": true
+                "type": "origins:constant",
+                "value": false
             },
             "origins": [
-                "origins-limiter:test1"
+                "origins-limiter:empty"
             ]
         }
     ]

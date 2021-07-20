@@ -1,0 +1,12 @@
+{
+    "powers": [
+        "origins-limiter:cancel"
+    ],
+    "icon": {
+        "item": "minecraft:barrier"
+    },
+    "order": 10,
+    "impact": 0,
+    "name": "CANCEL",
+    "description": "Cancel the origin picking process"
+}

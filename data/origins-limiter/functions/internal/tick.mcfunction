@@ -7,9 +7,6 @@
 #   function origins-limiter:internal/tick
 
 
-#   Count how many players have certain origins
-execute store result score #players o-l.main if entity @a
-
 function #origins-limiter:origins
 
 

@@ -1,0 +1,189 @@
+{
+    "name": "Origin (confirmation)",
+    "missing_name": "Missing",
+    "missing_description": "You either already have an origin, or don't.",
+    "origins": [
+        "origins-limiter:null",
+        "origins-limiter:cancel",
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:arachnid"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/arachnid"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:arachnid"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:avian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/avian"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:avian"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:blazeborn"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/blazeborn"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:blazeborn"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:elytrian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/elytrian"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:elytrian"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:enderian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/enderian"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:enderian"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:feline"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/feline"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:feline"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:human"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/human"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:human"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:merling"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/merling"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:merling"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:phantom"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/phantom"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:phantom"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:shulk"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/default/shulk"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:shulk"
+            ]
+        }
+    ]
+}
