@@ -7,7 +7,12 @@
 #   function origins-limiter:internal/tick
 
 
-function #origins-limiter:origins
+#   Call the `#origins-limiter:origins` function tag if the interval threshold has been reached
+scoreboard players add #currentInterval o-l.main 1
+
+scoreboard players operation #currentInterval o-l.main %= #updateInterval o-l.main
+
+execute if score #currentInterval o-l.main matches 0 run function #origins-limiter:origins
 
 
 #   Loop this function

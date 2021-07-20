@@ -15,5 +15,10 @@ scoreboard objectives add o-l.main dummy
 scoreboard objectives add o-l.max dummy
 
 
+scoreboard players set #origins-limiter load.status 1
+
+execute unless score #updateInterval o-l.main = #updateInterval o-l.main run scoreboard players set #updateInterval o-l.main 10
+
+
 #   Re-initialize tick function
 schedule function origins-limiter:internal/tick 1t replace
