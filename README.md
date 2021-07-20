@@ -33,7 +33,7 @@ The limiter system has some adjustable variables one can modify however one can,
 * `#updateInterval` score holder in the `o-l.main` scoreboard objective; determines how many ticks should happen before updating the current count of the players; can be modified **but** can't have a value of less than 1
 <br> 
 
-In order to use this library, you must create an advancement (`.json` file), and a function (`.mcfunction` file) inside the `data/origins-limiter/advancements/can_pick/custom` and the `data/origins-limiter/functions/custom` folders respectively. You can name them however you want, but it must follow the namespacing rules. I recommend naming them after the origin you want to restrict.
+In order to use this library, you must create an advancement (`.json` file), and a function (`.mcfunction` file) inside the `data/origins-limiter/advancements/can_pick/custom` and the `data/origins-limiter/functions/custom` folders respectively. You can name them however you want, but it must follow the namespacing rules. I recommend naming them after the origin you want to restrict. <br>
 (e.g: `data/origins-limiter/advancements/can_pick/custom/example.json`, `data/origins-limiter/functions/custom/example.mcfunction` for the `origins:example` origin).
 <br>
 
@@ -55,7 +55,6 @@ In this example, the name of the advancement is <code>example.json</code> in <co
 
 </details>
 </ol>
-<br>
 
 <ol>
 <details>
