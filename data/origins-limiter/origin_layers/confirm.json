@@ -3,7 +3,6 @@
     "missing_name": "Missing",
     "missing_description": "You either already have an origin, or don't.",
     "origins": [
-        "origins-limiter:null",
         "origins-limiter:cancel",
         {
             "condition": {

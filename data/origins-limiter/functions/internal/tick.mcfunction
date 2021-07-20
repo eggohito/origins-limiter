@@ -8,6 +8,9 @@
 
 
 #   Call the `#origins-limiter:origins` function tag if the interval threshold has been reached
+execute if score #updateInterval o-l.main matches ..0 run scoreboard players set #updateInterval o-l.main 1
+
+
 scoreboard players add #currentInterval o-l.main 1
 
 scoreboard players operation #currentInterval o-l.main %= #updateInterval o-l.main
