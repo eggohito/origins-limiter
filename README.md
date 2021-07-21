@@ -33,14 +33,16 @@ The limiter system has some adjustable variables one can modify however one can,
 * `#updateInterval` score holder in the `o-l.main` scoreboard objective; determines how many ticks should happen before updating the current count of the players; can be modified **but** can't have a value of less than 1
 <br> 
 
-In order to use this library, you must create an advancement (`.json` file), and a function (`.mcfunction` file) inside the `data/origins-limiter/advancements/can_pick/custom` and the `data/origins-limiter/functions/custom` folders respectively. You can name them however you want, but it must follow the namespacing rules. I recommend naming them after the origin you want to restrict. <br>
-(e.g: `data/origins-limiter/advancements/can_pick/custom/example.json`, `data/origins-limiter/functions/custom/example.mcfunction` for the `origins:example` origin).
+In order to use this library, you must create an advancement (`.json` file), and a function (`.mcfunction` file) inside the `data/origins-limiter/advancements/can_pick/custom` and the `data/origins-limiter/functions/custom` folders respectively. You can name them however you want, but it must follow the namespacing rules. I recommend naming them after the origin you want to restrict.
+<br>
 <br>
 
 <ol>
 <details>
 
-<summary>You can then set the contents of the advancement to this, as we will be only using it as a condition in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.<br>
+<summary>You can then set the contents of the advancement to this, as we will be only using it as a condition in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.
+<br>
+<br>
 
 In this example, the name of the advancement is <code>example.json</code> in <code>data/origins-limiter/advancements/can_pick/custom</code>:</summary>
 ```json
@@ -55,11 +57,14 @@ In this example, the name of the advancement is <code>example.json</code> in <co
 
 </details>
 </ol>
+<br>
 
 <ol>
 <details>
 
 <summary>Then, you can set the contents of your function to this; this function is essential to keeping track of how many players have the origin , and if players should be able to choose the origin.
+<br>
+<br>
 
 In this example, the name of the function is <code>example.mcfunction</code> in <code>data/origins-limiter/functions/custom</code>:</summary>
 ```mcfunction
@@ -83,6 +88,7 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 
 </details>
 </ol>
+<br>
 
 <ol>
 <details>
