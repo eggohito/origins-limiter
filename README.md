@@ -23,6 +23,7 @@ This datapack uses [Lantern Load](https://github.com/LanternMC/Load) to ensure t
 </details>
 </ol>
 
+
 ### How to use:
 The limiter system has some adjustable variables one can modify however one can, with `/scoreboard players set`:
 
@@ -40,11 +41,8 @@ In order to use this library, you must create an advancement (`.json` file), and
 <ol>
 <details>
 
-<summary>You can then set the contents of the advancement to this, as we will be only using it as a condition in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.
-<br>
-<br>
+<summary>You can set the contents of the advancement to this, as we will be only using it as a condition in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.</summary>
 
-In this example, the name of the advancement is <code>example.json</code> in <code>data/origins-limiter/advancements/can_pick/custom</code>:</summary>
 ```json
 {
     "criteria": {
@@ -55,6 +53,8 @@ In this example, the name of the advancement is <code>example.json</code> in <co
 }
 ```
 
+* This advancement being in the `data/origins-limiter/advancements/can_pick/custom` folder
+
 </details>
 </ol>
 <br>
@@ -62,11 +62,8 @@ In this example, the name of the advancement is <code>example.json</code> in <co
 <ol>
 <details>
 
-<summary>Then, you can set the contents of your function to this; this function is essential to keeping track of how many players have the origin , and if players should be able to choose the origin.
-<br>
-<br>
+<summary>You can then set the contents of your function to this; the function is essential to keeping track of how many players have the origin, and if players should be able to choose the origin.</summary>
 
-In this example, the name of the function is <code>example.mcfunction</code> in <code>data/origins-limiter/functions/custom</code>:</summary>
 ```mcfunction
 #   Set the max count for this origin once (can then be changed in-game afterwards)
 execute unless score %example o-l.max = %example o-l.max run scoreboard players set %example o-l.max 1
@@ -82,6 +79,8 @@ execute if score %example o-l.main < %example o-l.max run advancement grant @a o
 execute if score %example o-l.main >= %example o-l.max run advancement revoke @a only origins-limiter:can_pick/custom/example
 ```
 
+* This function being in the `data/origins-limiter/functions/custom` folder
+
 * `%example` is a score holder in both the `o-l.main` and `o-l.max` scoreboard objectives for the `origins:example` origin
 
 * `origins-limiter:can_pick/custom/example` being the advancement for the `origins:example` origin
@@ -93,7 +92,7 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 <ol>
 <details>
 
-<summary>Afterwards, you can reference your function in the <code>#origins-limiter:custom</code> (<code>data/origins-limiter/tags/functions/custom.json</code>) function tag for it to be run per set interval, like so:</summary>
+<summary>Then, you can reference your function in the <code>#origins-limiter:custom</code> (<code>data/origins-limiter/tags/functions/custom.json</code>) function tag for it to be run per set interval</summary>
 
 ```json
 {
@@ -107,3 +106,42 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 
 </details>
 </ol>
+
+<ol>
+<details>
+<summary>Afterwards, you can then reference the custom origin and the advancement for the custom origin in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.</summary>
+
+```json
+{
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:example"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/custom/example"
+                    }
+                ]
+            },
+            "origins": [
+                "origins:example"
+            ]
+        }
+    ]
+}
+```
+
+* `origins-limiter:can_pick/custom/example` being the advancement you made in `data/origins-limiter/advancements/custom`
+* `origins:example` being the origin JSON
+
+</details>
+</ol>
+
+
+### Request
+You can create an issue using the ['request integration'](https://github.com/eggohito/origins-limiter/issues/new?assignees=&labels=request&template=request-integration.md&title=%5BREQUEST%5D) issue template to this repository if you want to request an Origins datapack to have this system integrated if one can't do it themself. Do note that it may or may not take a while!
