@@ -4,9 +4,10 @@ This datapack uses [Lantern Load](https://github.com/LanternMC/Load). You can de
 <br>
 e.g: `100` = Version 1.0.0, `110` = Version 1.1.0, etc.
 <br>
+<br>
 
 
-### How to use
+## How to use
 The limiter system has some adjustable variables one can modify however one can, with `/scoreboard players set`:
 
 * `o-l.max` - scoreboard objective; stores the max count of the players that has a certain origin; all the scores of the score holder in this objective can be modified in-game
@@ -43,7 +44,7 @@ In order to use this library, you must create an advancement (`.json` file), and
 <ol>
 <details>
 
-<summary>You can then set the contents of your function to this; the function is essential to keeping track of how many players have the origin, and if players should be able to choose the origin.</summary>
+<summary>You can then set the contents of your function to this; the function is essential for keeping track of how many players have the origin, and if players should be able to choose the origin.</summary>
 
 ```mcfunction
 #   Set the max count for this origin once (can then be changed in-game afterwards)
@@ -124,5 +125,5 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 <br>
 
 
-### Request
+## Request
 You can create an issue using the ['request integration'](https://github.com/eggohito/origins-limiter/issues/new?assignees=&labels=request&template=request-integration.md&title=%5BREQUEST%5D) issue template to this repository if you want to request an Origins datapack to have this system integrated if one can't do it themself. Do note that it may or may not take a while!
