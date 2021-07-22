@@ -22,9 +22,10 @@ This datapack uses [Lantern Load](https://github.com/LanternMC/Load) to ensure t
 
 </details>
 </ol>
+<br>
 
 
-### How to use:
+### How to use
 The limiter system has some adjustable variables one can modify however one can, with `/scoreboard players set`:
 
 * `o-l.max` - scoreboard objective; stores the max count of the players that has a certain origin; all the scores of the score holder in this objective can be modified in-game
@@ -139,6 +140,7 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 
 </details>
 </ol>
+<br>
 
 
 ### Request
