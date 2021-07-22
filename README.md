@@ -1,27 +1,8 @@
 # Limiter (Origins)
 
-This datapack uses [Lantern Load](https://github.com/LanternMC/Load) to ensure that this datapack will load before your datapack. You can detect if this library is loaded by checking the `#origins-limiter` score holder in the `load.status` objective.
-
-<ol>
-<details>
-
-<summary>To ensure that this library loads before your datapack, you would add your load function inside the <code>#load:post_load</code> (<code>data/load/tags/functions/post_load.json</code>) function tag after copying the <code>minecraft</code> and <code>load</code> folders from the Lantern Load repository, like so:</summary>
-
-```json
-{
-    "values": [
-        "<namespace>:path/to/function"
-    ]
-}
-```
-* `<namespace>` being the namespace you're using <br>
-(e.g: `data/example` --> `example:...`)
-
-* `path/to/function` being your load function <br>
-(e.g: `data/example/functions/load.mcfunction` --> `example:load`)
-
-</details>
-</ol>
+This datapack uses [Lantern Load](https://github.com/LanternMC/Load). You can detect if this library is loaded by checking the `origins-limiter` score holder in the `load.status` objective with `execute if score origins-limiter load.status matches <value>`, where `<value>` is a three digit integer.
+<br>
+e.g: `100` = Version 1.0.0, `110` = Version 1.1.0, etc.
 <br>
 
 
