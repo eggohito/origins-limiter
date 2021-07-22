@@ -57,7 +57,6 @@ In order to use this library, you must create an advancement (`.json` file), and
 
 </details>
 </ol>
-<br>
 
 <ol>
 <details>
@@ -87,7 +86,6 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 
 </details>
 </ol>
-<br>
 
 <ol>
 <details>
