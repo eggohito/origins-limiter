@@ -15,7 +15,7 @@ scoreboard objectives add o-l.main dummy
 scoreboard objectives add o-l.max dummy
 
 
-scoreboard players set #origins-limiter load.status 1
+scoreboard players set origins-limiter load.status 100
 
 execute unless score #updateInterval o-l.main = #updateInterval o-l.main run scoreboard players set #updateInterval o-l.main 10
 
