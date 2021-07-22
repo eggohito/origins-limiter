@@ -8,64 +8,64 @@ e.g: `100` = Version 1.0.0, `110` = Version 1.1.0, etc.
 
 
 ## How to use
-The limiter system has some adjustable variables one can modify however one can, with `/scoreboard players set`:
+The limiter system has some adjustable variables one can modify however one can:
 
 * `o-l.max` - scoreboard objective; stores the max count of the players that has a certain origin; all the scores of the score holder in this objective can be modified in-game
   
 * `o-l.main` - scoreboard objective; stores the current count of the players that has a certain origin; **read only**
 
 * `#updateInterval` score holder in the `o-l.main` scoreboard objective; determines how many ticks should happen before updating the current count of the players; can be modified **but** can't have a value of less than 1
-<br> 
+<br>
 
-In order to use this library, you must create an advancement (`.json` file), and a function (`.mcfunction` file) inside the `data/origins-limiter/advancements/can_pick/custom` and the `data/origins-limiter/functions/custom` folders respectively. You can name them however you want, but it must follow the namespacing rules. I recommend naming them after the origin you want to restrict.
+In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/files/6864726/example_pack.zip) as our reference. Our namespace will be `example` (`data/example`) and our origin will be `example:test_origin` (`data/example/origins/test_origin.json`). We'll be naming the function and advancement to have the same name as the origin JSON for consistency.
 <br>
-<br>
+
 
 <ol>
 <details>
 
-<summary>You can set the contents of the advancement to this, as we will be only using it as a condition in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.</summary>
+<summary>Create an advancement (a text file with the <code>.json</code> file extension) in the <code>data/origins-limiter/advancements/can_pick/custom</code> folder in your datapack. This advancement will be used for checking if the player can pick the origin you want to restrict</summary>
 
 ```json
 {
     "criteria": {
-        "restrict": {
+        "dummy": {
             "trigger": "minecraft:impossible"
         }
     }
 }
 ```
 
-* This advancement being in the `data/origins-limiter/advancements/can_pick/custom` folder
-
 </details>
 </ol>
 
 <ol>
 <details>
 
-<summary>You can then set the contents of your function to this; the function is essential for keeping track of how many players have the origin, and if players should be able to choose the origin.</summary>
+<summary>Create a function file (a text file with the <code>.mcfunction</code> file extension) in the <code>data/origins-limiter/functions/custom</code> folder in your datapack. This function will be used for tracking/controlling how many players have the certain origin you want to restrict</summary>
 
 ```mcfunction
 #   Set the max count for this origin once (can then be changed in-game afterwards)
-execute unless score %example o-l.max = %example o-l.max run scoreboard players set %example o-l.max 1
+execute unless score %test_origin o-l.max = %test_origin o-l.max run scoreboard players set %test_origin o-l.max 1
 
 
 #   Store the count of the players that currently have this origin
-execute store result score %example o-l.main if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:example"}]}}}]
+execute store result score %test_origin o-l.main if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "example:test_origin"}]}}}]
 
 
-#   Grant the player an advancement to indicate that the max count for this origin has been reached; used to restricting players from choosing the origin in the `origins:origin` origin layer
-execute if score %example o-l.main < %example o-l.max run advancement grant @a only origins-limiter:can_pick/custom/example
+#   Grant the player an advancement to indicate that the player can choose the origin. Revoke the origin otherwise
+execute if score %test_origin o-l.main < %test_origin o-l.max run advancement grant @a only origins-limiter:can_pick/custom/test_origin
 
-execute if score %example o-l.main >= %example o-l.max run advancement revoke @a only origins-limiter:can_pick/custom/example
+execute if score %test_origin o-l.main >= %test_origin o-l.max run advancement revoke @a only origins-limiter:can_pick/custom/test_origin
 ```
 
-* This function being in the `data/origins-limiter/functions/custom` folder
+* `%test_origin` score holder in the `o-l.main` objective is used for tracking how many players have the `example:test_origin` origin
 
-* `%example` is a score holder in both the `o-l.main` and `o-l.max` scoreboard objectives for the `origins:example` origin
+* `%test_origin` score holder in the `o-l.max` objective is the max count of players that can have the `example:test_origin` origin
 
-* `origins-limiter:can_pick/custom/example` being the advancement for the `origins:example` origin
+* `origins-limiter:can_pick/custom/test_origin` (`data/origins-limiter/advancements/custom/test_origin.json`) being the advancement for the `example:test_origin` origin
+
+* `example:test_origin` (`data/example/origins/test_origin.json`) being the origin you want to restrict
 
 </details>
 </ol>
@@ -73,24 +73,24 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
 <ol>
 <details>
 
-<summary>Then, you can reference your function in the <code>#origins-limiter:custom</code> (<code>data/origins-limiter/tags/functions/custom.json</code>) function tag for it to be run per set interval</summary>
+<summary>You can then reference your newly created function in the <code>#origins-limiter:custom</code> (<code>data/origins-limiter/tags/functions/custom.json</code>) function tag to run the function per interval</summary>
 
 ```json
 {
     "values": [
-        "origins-limiter:custom/example"
+        "origins-limiter:custom/test_origin"
     ]
 }
 ```
 
-* `origins-limiter:custom/example` (`data/origins-limiter/functions/custom/example.mcfunction`) being the function for the `origins:example` origin
+* `origins-limiter:custom/test_origin` (`data/origins-limiter/functions/custom/test_origin.mcfunction`) being the function for the `example:test_origin` origin
 
 </details>
 </ol>
 
 <ol>
 <details>
-<summary>Afterwards, you can then reference the custom origin and the advancement for the custom origin in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer.</summary>
+<summary>Afterwards, you can then reference the custom origin and the advancement for the custom origin in the <code>origins-limiter:confirm</code> (<code>data/origins-limiter/origin_layers/confirm.json</code>) origin layer</summary>
 
 ```json
 {
@@ -101,24 +101,25 @@ execute if score %example o-l.main >= %example o-l.max run advancement revoke @a
                 "conditions": [
                     {
                         "type": "origins:origin",
-                        "origin": "origins:example"
+                        "origin": "example:test_origin"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:can_pick/custom/example"
+                        "advancement": "origins-limiter:can_pick/custom/test_origin"
                     }
                 ]
             },
             "origins": [
-                "origins:example"
+                "example:test_origin"
             ]
         }
     ]
 }
 ```
 
-* `origins-limiter:can_pick/custom/example` being the advancement you made in `data/origins-limiter/advancements/custom`
-* `origins:example` being the origin JSON
+* `origins-limiter:can_pick/custom/test_origin` (`data/origins-limiter/advancements/can_pick/custom/test_origin.json`) being the advancement for the `example:test_origin` origin
+
+* `example:test_origin` (`data/example/origins/test_origin.json`) being the origin you want to restrict
 
 </details>
 </ol>
