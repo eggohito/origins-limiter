@@ -6,7 +6,7 @@ execute unless score %blazeborn o-l.max = %blazeborn o-l.max run scoreboard play
 execute store result score %blazeborn o-l.main if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:blazeborn"}]}}}]
 
 
-#   Grant the player an advancement to indicate that the player can choose the origin. Revoke the origin otherwise
+#   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise
 execute if score %blazeborn o-l.main < %blazeborn o-l.max run advancement grant @a only origins-limiter:can_pick/default/blazeborn
 
 execute if score %blazeborn o-l.main >= %blazeborn o-l.max run advancement revoke @a only origins-limiter:can_pick/default/blazeborn
