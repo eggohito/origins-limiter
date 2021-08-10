@@ -1,6 +1,6 @@
 {
     "criteria": {
-        "restrict": {
+        "dummy": {
             "trigger": "minecraft:impossible"
         }
     }
