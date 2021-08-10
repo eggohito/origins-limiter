@@ -53,7 +53,7 @@ execute unless score %test_origin o-l.max = %test_origin o-l.max run scoreboard 
 execute store result score %test_origin o-l.main if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "example:test_origin"}]}}}]
 
 
-#   Grant the player an advancement to indicate that the player can choose the origin. Revoke the origin otherwise
+#   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise
 execute if score %test_origin o-l.main < %test_origin o-l.max run advancement grant @a only origins-limiter:can_pick/custom/test_origin
 
 execute if score %test_origin o-l.main >= %test_origin o-l.max run advancement revoke @a only origins-limiter:can_pick/custom/test_origin
