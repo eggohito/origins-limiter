@@ -2,15 +2,32 @@
 
 This datapack uses [Lantern Load](https://github.com/LanternMC/Load). You can detect if this library is loaded by checking the `origins-limiter` score holder in the `load.status` objective with `execute if score origins-limiter load.status matches <value>`, where `<value>` is a three digit integer.
 <br>
+
 e.g: `100` = Version 1.0.0, `110` = Version 1.1.0, etc.
 <br>
+<br>
+
+It's not really a must-do, but if you want your datapack to depend on this library, you can place your load function in the `data/load/tags/post_load.json` function tag, so that it'll run before `origins-limiter:internal/load`, like so:
+
+```json
+{
+    "values": [
+        "<namespace>:<function>"
+    ]
+}
+```
+* `<namespace>` being your namespace in `data`
+  * e.g: `data/example/*` --> `example:*` 
+* `<function>` being the load function in your datapack
+  * e.g: `data/example/functions/load.mcfunction` --> `example:load` 
+
 <br>
 
 
 ## How to use
 The limiter system has some adjustable variables one can modify however one can:
 
-* `o-l.max` - scoreboard objective; stores the max count of the players that has a certain origin; all the scores of the score holder in this objective can be modified in-game
+* `o-l.max` - scoreboard objective; stores the max count of the players that has a certain origin; all the scores of the score holder(s) in this objective can be modified in-game
   
 * `o-l.main` - scoreboard objective; stores the current count of the players that has a certain origin; **read only**
 
