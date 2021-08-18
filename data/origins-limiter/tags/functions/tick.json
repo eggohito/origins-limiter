@@ -1,0 +1,8 @@
+{
+    "values": [
+        {
+            "id": "#origins-limiter:can_pick/origin",
+            "required": false
+        }
+    ]
+}
