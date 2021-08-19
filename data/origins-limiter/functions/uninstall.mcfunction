@@ -22,6 +22,6 @@ scoreboard objectives remove o-l.main
 
 
 #   Disable the datapack
-datapack disable "file/origins-limiter_1.17_v1.1.0"
+datapack disable "file/origins-limiter_1.16_v1.1.0"
 
-datapack disable "file/origins-limiter_1.17_v1.1.0.zip"
+datapack disable "file/origins-limiter_1.16_v1.1.0.zip"
