@@ -18,7 +18,7 @@ function origins-limiter:private/constants
 
 
 #   Check if there's an older version of the pack installed before setting constants/variables/global data
-scoreboard players set origins-limiter load.status 110
+scoreboard players set origins-limiter load 110
 
 function origins-limiter:private/version/check
 

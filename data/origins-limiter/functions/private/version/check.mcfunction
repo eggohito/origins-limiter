@@ -14,13 +14,13 @@ scoreboard players reset #semver.patch o-l.main
 
 
 #   Migrate score holders if `#semver` doesn't match `origins-limiter`, and re-synchronize their values afterwards
-execute unless score #semver o-l.main = origins-limiter load.status run function origins-limiter:private/version/migrate
+execute unless score #semver o-l.main = origins-limiter load run function origins-limiter:private/version/migrate
 
-scoreboard players operation #semver o-l.main = origins-limiter load.status
+scoreboard players operation #semver o-l.main = origins-limiter load
 
 
 #   Store the semver as three separate values
-execute store result storage eggohito:origins-limiter temp.semver int 1 run scoreboard players get origins-limiter load.status
+execute store result storage eggohito:origins-limiter temp.semver int 1 run scoreboard players get origins-limiter load
 
 
     ##  Get MAJOR
