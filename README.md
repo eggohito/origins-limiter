@@ -39,7 +39,7 @@ The limiter system has some adjustable variables one can modify however one can:
 These are the steps for integrating the library to your datapack. If you only want to limit the default origins, you **don't** have to do this.
 <br>
 
-In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/files/6864726/example_pack.zip) as our reference. Our namespace will be `example` (`data/example`) and our origin will be `example:test_origin` (`data/example/origins/test_origin.json`). We'll be naming the function and advancement to have the same name as the origin JSON for consistency.
+In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/tree/1.17.x/example) as our reference. Our namespace will be `example` (`data/example`) and our origin will be `example:test_origin` (`data/example/origins/test_origin.json`). We'll be naming the function and advancement to have the same name as the origin JSON for consistency.
 <br>
 
 
