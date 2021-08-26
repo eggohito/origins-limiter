@@ -40,13 +40,16 @@ These are the steps for integrating the library to your datapack. If you only wa
 <br>
 
 In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/tree/1.17.x/example) as our reference. Our namespace will be `example` (`data/example`) and our origin will be `example:test_origin` (`data/example/origins/test_origin.json`). We'll be naming the function and advancement to have the same name as the origin JSON for consistency.
+
 <br>
 
 
 <ol>
 <details>
 
-<summary>Create an advancement (a text file with the <code>.json</code> file extension) in the <code>data/origins-limiter/advancements/can_pick/origin</code> folder in your datapack. This advancement will be used for checking if the player can pick the origin you want to restrict</summary>
+<summary>
+Create a <code>.json</code> file in the <code>data/origins-limiter/advancements/can_pick/origin</code> folder in your datapack.
+</summary>
 
 ```json
 {
@@ -64,7 +67,13 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <ol>
 <details>
 
-<summary>Create a function file (a text file with the <code>.mcfunction</code> file extension) in the <code>data/origins-limiter/functions/can_pick/origin</code> folder in your datapack. This function will be used for tracking/controlling how many players have the certain origin you want to restrict</summary>
+<summary>
+Create an <code>.mcfunction</code> file in the <code>data/origins-limiter/functions/can_pick/origin</code> folder in your datapack.
+
+<br>
+
+This function will be the one responsible for counting how many players currently have the origin.
+</summary>
 
 ```mcfunction
 #   Set the max count for this origin once (can then be changed in-game afterwards)
@@ -95,7 +104,9 @@ execute if score test_origin o-l.cur >= test_origin o-l.max run advancement revo
 <ol>
 <details>
 
-<summary>You can then reference your newly created function in the <code>#origins-limiter:can_pick/origin</code> (<code>data/origins-limiter/tags/functions/can_pick/origin.json</code>) function tag to run the function per interval</summary>
+<summary>
+You can then reference the function you created in the <code>data/origins-limiter/tags/functions/can_pick/origin.json</code> function tag.
+</summary>
 
 ```json
 {
@@ -112,7 +123,8 @@ execute if score test_origin o-l.cur >= test_origin o-l.max run advancement revo
 
 <ol>
 <details>
-<summary>Afterwards, you can then reference the custom origin and the advancement for the custom origin in the <code>origins-limiter:confirm/origin</code> (<code>data/origins-limiter/origin_layers/confirm/origin.json</code>) origin layer</summary>
+<summary>Afterwards, you can then reference the custom origin and the advancement for the custom origin in the <code>data/origins-limiter/origin_layers/confirm/origin.json</code> origin layer.
+</summary>
 
 ```json
 {
