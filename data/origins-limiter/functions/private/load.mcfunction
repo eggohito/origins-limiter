@@ -14,9 +14,9 @@ scoreboard objectives add o-l.max dummy
 
 
 #   Check if there's an older version of the pack installed before setting constants/variables/global data
-scoreboard players set origins-limiter load 110
+scoreboard players set origins-limiter load 120
 
-data modify storage origins-limiter: root.version set value "1.1.0"
+data modify storage origins-limiter: root.version set value "1.2.0"
 
 
     ##   Set variables
