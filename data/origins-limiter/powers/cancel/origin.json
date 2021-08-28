@@ -12,6 +12,10 @@
             {
                 "type": "origins:execute_command",
                 "command": "origin set @s origins:origin origins-limiter:empty"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "function #origins-limiter:cancel"
             }
         ]
     },
