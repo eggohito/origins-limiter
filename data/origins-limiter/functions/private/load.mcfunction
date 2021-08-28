@@ -13,14 +13,10 @@ scoreboard objectives add o-l.cur dummy
 scoreboard objectives add o-l.max dummy
 
 
-#   Set constants
-function origins-limiter:private/constants
-
-
 #   Check if there's an older version of the pack installed before setting constants/variables/global data
-scoreboard players set origins-limiter load.status 110
+scoreboard players set origins-limiter load.status 111
 
-function origins-limiter:private/version/check
+data modify storage origins-limiter: root.version set value "1.1.1"
 
 
     ##   Set variables
@@ -28,9 +24,9 @@ function origins-limiter:private/version/check
 
 
     ##   Display a load/reload message
-    execute unless score #loaded o-l.main = #loaded o-l.main run tellraw @a {"translate": "[+ Loaded \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]", "color": "green", "with": [{"score": {"name": "#semver.major", "objective": "o-l.main"}}, {"score": {"name": "#semver.minor", "objective": "o-l.main"}}, {"score": {"name": "#semver.patch", "objective": "o-l.main"}}]}
+    execute unless score #loaded o-l.main = #loaded o-l.main run tellraw @a {"translate": "[+ Loaded \"Limiter (Origins)\" @ v%s]", "color": "green", "with": [{"storage": "origins-limiter:", "nbt": "root.version"}]}
 
-    execute if score #loaded o-l.main = #loaded o-l.main run tellraw @a[tag = origins-limiter.debugger] {"translate": "[+ Reloaded \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]", "color": "green", "with": [{"score": {"name": "#semver.major", "objective": "o-l.main"}}, {"score": {"name": "#semver.minor", "objective": "o-l.main"}}, {"score": {"name": "#semver.patch", "objective": "o-l.main"}}]}
+    execute if score #loaded o-l.main = #loaded o-l.main run tellraw @a[tag = origins-limiter.debugger] {"translate": "[+ Reloaded \"Limiter (Origins)\" @ v%s]", "color": "green", "with": [{"storage": "origins-limiter:", "nbt": "root.version"}]}
 
     scoreboard players set #loaded o-l.main 1
 
