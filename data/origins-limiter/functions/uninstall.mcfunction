@@ -6,7 +6,7 @@
 
 
 #   Display an uninstallation message
-tellraw @a {"translate": "[- Disabled \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]", "color": "red", "with": [{"score": {"name": "#semver.major", "objective": "o-l.main"}}, {"score": {"name": "#semver.minor", "objective": "o-l.main"}}, {"score": {"name": "#semver.patch", "objective": "o-l.main"}}]}
+tellraw @a {"translate": "[- Disabled \"Limiter (Origins)\" @ v%s]", "color": "red", "with": [{"storage": "origins-limiter:", "nbt": "root.version"}]}
 
 
 #   Clear scheduled function(s)
@@ -21,7 +21,11 @@ scoreboard objectives remove o-l.cur
 scoreboard objectives remove o-l.main
 
 
-#   Disable the datapack
-datapack disable "file/origins-limiter_1.17_v1.1.0"
+#   Remove storage
+data remove storage origins-limiter: root
 
-datapack disable "file/origins-limiter_1.17_v1.1.0.zip"
+
+#   Disable the datapack
+datapack disable "file/origins-limiter_1.17_v1.1.1"
+
+datapack disable "file/origins-limiter_1.17_v1.1.1.zip"
