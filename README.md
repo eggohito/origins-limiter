@@ -31,7 +31,7 @@ The limiter system has some adjustable variables one can modify however one can:
   
 * `o-l.cur` - scoreboard objective; stores the current count of the players that has a certain origin; **read only**
 
-* `#updateInterval` score holder in the `o-l.main` scoreboard objective; determines how many ticks should happen before updating the current count of the players; can be modified **but** can't have a value of less than 1
+* `updateInterval` score holder in the `o-l.main` scoreboard objective; determines how many ticks should happen before updating the current count of the players; can be modified **but** can't have a value of less than 1
 <br>
 
 
@@ -94,7 +94,7 @@ execute if score test_origin o-l.cur >= test_origin o-l.max run advancement revo
 
 * `test_origin` score holder in the `o-l.max` objective is the max count of players that can have the `example:test_origin` origin
 
-* `origins-limiter:can_pick/origin/test_origin` (`data/origins-limiter/advancements/test_origin.json`) being the advancement for the `example:test_origin` origin
+* `origins-limiter:can_pick/origin/test_origin` (`data/origins-limiter/advancements/can_pick/origin/test_origin.json`) being the advancement for the `example:test_origin` origin
 
 * `example:test_origin` (`data/example/origins/test_origin.json`) being the origin you want to restrict
 
