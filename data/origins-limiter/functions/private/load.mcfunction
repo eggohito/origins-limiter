@@ -13,14 +13,14 @@ scoreboard objectives add o-l.cur dummy
 scoreboard objectives add o-l.max dummy
 
 
-#   Check if there's an older version of the pack installed before setting constants/variables/global data
-scoreboard players set origins-limiter load.status 120
+#   Set semantic version
+scoreboard players set origins-limiter load.status 130
 
-data modify storage origins-limiter: root.version set value "1.2.0"
+data modify storage origins-limiter: root.version set value "1.3.0"
 
 
     ##   Set variables
-    execute unless score #loaded o-l.main = #loaded o-l.main run function origins-limiter:.cfg/default
+    execute unless score #loaded o-l.main = #loaded o-l.main run function origins-limiter:config/default
 
 
     ##   Display a load/reload message
