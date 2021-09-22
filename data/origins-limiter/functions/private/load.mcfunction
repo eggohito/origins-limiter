@@ -20,7 +20,7 @@ data modify storage origins-limiter: root.version set value "1.2.0"
 
 
     ##   Set variables
-    execute unless score #loaded o-l.main = #loaded o-l.main run function origins-limiter:.cfg/default
+    execute unless score #loaded o-l.main = #loaded o-l.main run function origins-limiter:config/default
 
 
     ##   Display a load/reload message

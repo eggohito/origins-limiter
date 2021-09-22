@@ -1,4 +1,4 @@
-#> origins-limiter:.cfg/default
+#> origins-limiter:config/default
 #
 #   > The default config for `origins-limiter`
 #
