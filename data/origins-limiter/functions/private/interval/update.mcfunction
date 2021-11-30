@@ -9,5 +9,5 @@
 execute if score updateInterval o-l.main matches ..0 run scoreboard players operation updateInterval o-l.main = #updateInterval o-l.main
 
 
-#   Assign #updateInterval's score to #updateInterval.prev
+#   Assign the score of the `updateInterval` score holder to `#updateInterval`
 scoreboard players operation #updateInterval o-l.main = updateInterval o-l.main

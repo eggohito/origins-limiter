@@ -8,6 +8,10 @@
                 "command": "function #origins-limiter:cancel/origin/pre"
             },
             {
+                "type": "origins:execute_command",
+                "command": "tellraw @s {\"nbt\": \"root.msg.cancel\", \"storage\": \"origins-limiter:main\", \"interpret\": true}"
+            },
+            {
                 "type": "origins:give",
                 "stack": {
                     "item": "origins:orb_of_origin"

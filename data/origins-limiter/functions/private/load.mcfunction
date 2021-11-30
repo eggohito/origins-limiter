@@ -13,22 +13,23 @@ scoreboard objectives add o-l.cur dummy
 scoreboard objectives add o-l.max dummy
 
 
+#   Set variables
+execute unless score #loaded o-l.main = #loaded o-l.main run function origins-limiter:config/default
+
+
 #   Set semantic version
-scoreboard players set origins-limiter load.status 130
-
-data modify storage origins-limiter: root.version set value "1.3.0"
+function origins-limiter:private/set_semver
 
 
-    ##   Set variables
-    execute unless score #loaded o-l.main = #loaded o-l.main run function origins-limiter:config/default
+#   Display a load/reload message
+execute unless score #loaded o-l.main = #loaded o-l.main run tellraw @a {"translate": "[+ Loaded \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]", "color": "green", "with": [{"nbt": "root.semver.major", "storage": "origins-limiter:main"}, {"nbt": "root.semver.minor", "storage": "origins-limiter:main"}, {"nbt": "root.semver.patch", "storage": "origins-limiter:main"}]}
+
+execute if score #loaded o-l.main = #loaded o-l.main run tellraw @a[tag = origins-limiter.debugger] {"translate": "[= Reloaded \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]", "color": "gold", "with": [{"nbt": "root.semver.major", "storage": "origins-limiter:main"}, {"nbt": "root.semver.minor", "storage": "origins-limiter:main"}, {"nbt": "root.semver.patch", "storage": "origins-limiter:main"}]}
 
 
-    ##   Display a load/reload message
-    execute unless score #loaded o-l.main = #loaded o-l.main run tellraw @a {"translate": "[+ Loaded \"Limiter (Origins)\" @ v%s]", "color": "green", "with": [{"storage": "origins-limiter:", "nbt": "root.version"}]}
+scoreboard players set origins-limiter load.status 1
 
-    execute if score #loaded o-l.main = #loaded o-l.main run tellraw @a[tag = origins-limiter.debugger] {"translate": "[+ Reloaded \"Limiter (Origins)\" @ v%s]", "color": "green", "with": [{"storage": "origins-limiter:", "nbt": "root.version"}]}
-
-    scoreboard players set #loaded o-l.main 1
+scoreboard players set #loaded o-l.main 1
 
 
 #   Re-initialize tick function

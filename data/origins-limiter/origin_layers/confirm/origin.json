@@ -1,10 +1,9 @@
 {
     "order": 1000,
     "name": "Origin (confirmation)",
-    "missing_name": "Missing",
-    "missing_description": "You either already have an origin, or don't.",
+    "missing_name": "None",
+    "missing_description": " ",
     "origins": [
-        "origins-limiter:cancel/origin",
         {
             "condition": {
                 "type": "origins:and",
@@ -184,6 +183,18 @@
             "origins": [
                 "origins:shulk"
             ]
-        }
-    ]
+        },
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": false
+            },
+            "origins": [
+                "origins-limiter:empty"
+            ]
+        },
+        "origins-limiter:cancel/origin"
+    ],
+    "auto_choose": true,
+    "hidden": true
 }
