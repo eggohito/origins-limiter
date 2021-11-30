@@ -1,0 +1,22 @@
+{
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "example:test_origin"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origin/test_origin"
+                    }
+                ]
+            },
+            "origins": [
+                "example:test_origin"
+            ]
+        }
+    ]
+}
