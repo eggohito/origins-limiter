@@ -1,6 +1,6 @@
 # Limiter (Origins)
 
-This datapack uses [Lantern Load](https://github.com/LanternMC/Load). You can detect if this library is loaded by checking the `origins-limiter` score holder in the `load.status` objective with `execute if score origins-limiter load.status matches <value>`, where `<value>` is a three digit integer.
+This datapack uses [Lantern Load](https://github.com/LanternMC/Load). You can detect if this library is loaded by checking the `origins-limiter` score holder in the `load` objective with `execute if score origins-limiter load matches <value>`, where `<value>` is a three digit integer.
 <br>
 
 e.g: `100` = Version 1.0.0, `110` = Version 1.1.0, etc.

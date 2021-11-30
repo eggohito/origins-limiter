@@ -1,10 +1,10 @@
 {
     "powers": [],
     "icon": {
-        "item": "minecraft:structure_void"
+        "item": "minecraft:air"
     },
     "order": 0,
     "impact": 0,
-    "name": "Empty",
-    "description": "You have no origin"
+    "name": "None",
+    "description": " "
 }

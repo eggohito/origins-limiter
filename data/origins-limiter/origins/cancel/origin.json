@@ -7,6 +7,6 @@
     },
     "order": 10,
     "impact": 0,
-    "name": "CANCEL",
-    "description": "Cancel the origin picking process"
+    "name": "Cancel",
+    "description": "Cancel the origin picking process."
 }
