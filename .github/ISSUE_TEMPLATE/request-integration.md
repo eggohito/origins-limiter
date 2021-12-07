@@ -1,13 +1,13 @@
 ---
-name: Request integration
-about: Request a datapack to have this library integrated
+name: Requesting Integration
+about: Request your datapack to have this datapack library integrated
 title: "[REQUEST]"
 labels: request
-assignees: ''
+assignees: eggohito
 
 ---
 
-**Requesting:**
+**Requesting integration for:**
+* Datapack file (preferably `.zip`)
 * Datapack name
 * Datapack author
-* Datapack file (`.zip`)
