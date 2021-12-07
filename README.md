@@ -2,7 +2,7 @@
 
 A datapack library that can limit how many players can have a certain origin.
 
-If you don't want to (or don't know how to) do the manual work of integrating the datapack library to your datapck, you can create an issue using the ['requesting integration'] issue template to this repository's issue tracker.
+If you don't want to (or don't know how to) do the manual work of integrating the datapack library to your datapck, you can create an issue using the ['requesting integration'](https://github.com/eggohito/origins-limiter/issues/new?assignees=eggohito&labels=request&template=requesting-integration.md&title=%5BREQUEST%5D) issue template to this repository's issue tracker.
 
 <br>
 
