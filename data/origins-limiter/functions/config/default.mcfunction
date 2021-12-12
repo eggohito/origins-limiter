@@ -7,4 +7,4 @@
 
 scoreboard players set updateInterval o-l.main 10
 
-data modify storage origins-limiter:main root.msg.cancel set value '{"text": "The origin you chose is currently not available.", "color": "red"}'
+data modify storage origins-limiter:main root.msg.cancel."origins:origin" set value '{"text": "The origin picking process has been cancelled.", "color": "red"}'
