@@ -1,7 +1,7 @@
 {
     "values": [
         {
-            "id": "#origins-limiter:can_pick/origin",
+            "id": "#origins-limiter:can_pick/origins",
             "required": false
         }
     ]

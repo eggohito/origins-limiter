@@ -5,11 +5,11 @@
         "actions": [
             {
                 "type": "origins:execute_command",
-                "command": "function #origins-limiter:cancel/origin/pre"
+                "command": "function #origins-limiter:cancel/pre"
             },
             {
                 "type": "origins:execute_command",
-                "command": "tellraw @s {\"nbt\": \"root.msg.cancel\", \"storage\": \"origins-limiter:main\", \"interpret\": true}"
+                "command": "tellraw @s {\"nbt\": \"root.msg.cancel.\\\"origins:origin\\\"\", \"storage\": \"origins-limiter:main\", \"interpret\": true}"
             },
             {
                 "type": "origins:give",
@@ -23,7 +23,11 @@
             },
             {
                 "type": "origins:execute_command",
-                "command": "function #origins-limiter:cancel/origin/post"
+                "command": "origin set @s origins-limiter:origins/origin origins-limiter:empty"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "function #origins-limiter:cancel/post"
             }
         ]
     },

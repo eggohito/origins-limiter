@@ -5,9 +5,9 @@
 #   *:private/load/**
 
 
-data modify storage origins-limiter:main root.semver.major set value 1
+data modify storage origins-limiter:main root.semver.major set value 2
 
-data modify storage origins-limiter:main root.semver.minor set value 4
+data modify storage origins-limiter:main root.semver.minor set value 0
 
 data modify storage origins-limiter:main root.semver.patch set value 0
 

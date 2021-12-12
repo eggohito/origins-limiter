@@ -20,17 +20,19 @@ Name | Type | Default | Description
 
 ## How to Use
 
-> ### :information_source: These are the steps for integrating the datapack library to your datapack. If you only want to limit the base origins, this is unnecessary.
+> ### :information_source: These are the steps for integrating the datapack library to your datapack. If you only want to limit the base origins, you don't have to follow these steps!
 <br>
 
 In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/tree/example) as our reference.
 
 <details>
 <summary>
-<b>1.</b> Create a <code>.json</code> file in the <code>data/origins-limiter/advancements/can_pick/origin</code> folder of your datapack. For consistency in this example, we'll be naming the <code>.json</code> file the same name as the example origin. 
+<b>1.</b> Create a <code>.json</code> file in the <code>data/origins-limiter/advancements/can_pick</code> folder of <b>your datapack</b>. For consistency, I would suggest naming the <code>.json</code> file after the origin that you want to limit.
 <br>
-<i>(The namespace and ID of the example origin being <code>example:test_origin</code>):</i>
+<i>(In this example, we'll be naming it after the example origin. The namespace and ID of the example origin being <code>example:test_origin</code>):</i>
 </summary>
+
+`data/origins-limiter/advancements/can_pick/example/test_origin.json`
 
 ```json
 {
@@ -46,49 +48,53 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 
 <details>
 <summary>
-<b>2.</b> Create an <code>.mcfunction</code> file in the <code>data/origins-limiter/functions/can_pick/origin</code> folder in your datapack. This function will be responsible for counting how many players will have the origin that we want to limit.
+<b>2.</b> Create an <code>.mcfunction</code> file in the <code>data/origins-limiter/functions/can_pick</code> folder in <b>your datapack</b>. This function will be the one responsible for counting how many players currently have the origin that we want to limit.
 <br>
 <i>(Which will be <code>example:test_origin</code> in the example's case):</i>
 </summary>
+
+`data/origins-limiter/functions/can_pick/example/test_origin.mcfunction`
 
 ```mcfunction
 #   Set the max count for this origin once (can then be changed in-game afterwards)
 #
 #   - o-l.max     = the scoreboard objective that stores the max count for the origin
-#   - test_origin = the score holder for the origin that we want to apply the limit to
+#   - example:test_origin = the score holder for the origin that we want to apply the limit to
 #
-execute unless score test_origin o-l.max = test_origin o-l.max run scoreboard players set test_origin o-l.max 1
+execute unless score example:test_origin o-l.max = example:test_origin o-l.max run scoreboard players set example:test_origin o-l.max 1
 
 
 #   Store the count of the players that currently have this origin
 #
 #   - "example:test_origin" = the namespace and ID of the origin that we want to apply the limit to
 #
-execute store result score test_origin o-l.cur if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "example:test_origin"}]}}}]
+execute store result score example:test_origin o-l.cur if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "example:test_origin"}]}}}]
 
 
 #   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise
 #
-#   - origins-limiter:can_pick/origin/test_origin = the .json file that we made in the first step
+#   - origins-limiter:can_pick/example/test_origin = the .json file that we made in the first step
 #
-execute if score test_origin o-l.cur < test_origin o-l.max run advancement grant @a only origins-limiter:can_pick/origin/test_origin
+execute if score example:test_origin o-l.cur < example:test_origin o-l.max run advancement grant @a only origins-limiter:can_pick/example/test_origin
 
-execute if score test_origin o-l.cur >= test_origin o-l.max run advancement revoke @a only origins-limiter:can_pick/origin/test_origin
+execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run advancement revoke @a only origins-limiter:can_pick/example/test_origin
 ```
 
 </details>
 
 <details>
 <summary>
-<b>3.</b> Create an <code>origin.json</code> file in the <code>data/origins-limiter/tags/functions/can_pick</code> folder of your datapack. Afterwards, reference the namespace, path and ID of the function that you've created in step 2 inside the <code>origin.json</code> file's <code>values</code> string array field. 
+<b>3.</b> Create an <code>origins.json</code> file in the <code>data/origins-limiter/tags/functions/can_pick</code> folder of <b>your datapack</b>. Afterwards, reference the namespace, path and ID of the function that you've created in step 2 inside the <code>origins.json</code> file's <code>values</code> string array field. 
 <br>
-<i>(In this example, we'll be calling the <code>test_origin</code> function that was created in the <code>origins-limiter:can_pick/origin</code> folder previously):</i>
+<i>(In this example, we'll be calling the <code>test_origin</code> function that was created in the <code>origins-limiter:can_pick/example</code> folder previously):</i>
 </summary>
+
+`data/origins-limiter/tags/functions/can_pick/origins.json`
 
 ```json
 {
     "values": [
-        "origins-limiter:can_pick/origin/test_origin"
+        "origins-limiter:can_pick/example/test_origin"
     ]
 }
 ```
@@ -97,14 +103,14 @@ execute if score test_origin o-l.cur >= test_origin o-l.max run advancement revo
 
 <details>
 <summary>
-<b>4.</b> Create an <code>origin.json</code> file inside the <code>data/origins-limiter/origin_layers/confirm</code> folder of your datapack. Inside the <code>origins</code> array field of the <code>origin.json</code> file, you would use <a href = "https://origins.readthedocs.io/en/latest/guides/data/origin_conditions_in_layers/">Origins entity condition types</a> to check if the player has the origin that we want to limit, and the advancement that we made in step 1. 
+<b>4.</b> Create an <code>origin.json</code> file inside the <code>data/origins-limiter/origin_layers/origins</code> folder of <b>your datapack</b>. Inside the <code>origins</code> array field of the <code>origin.json</code> file, you would use <a href = "https://origins.readthedocs.io/en/latest/guides/data/origin_conditions_in_layers/">Origins' entity condition types</a> to check if the player has the origin that we want to limit, and the advancement that we made in step 1.
 <br>
-<i>(In this example, we'll be checking if the player has the <code>example:test_origin</code> origin and the <code>origins-limiter:can_pick/origin/test_origin</code> advancement):</i>
+<i>(In this example, we'll be checking if the player has the <code>example:test_origin</code> origin and the <code>origins-limiter:can_pick/example/test_origin</code> advancement):</i>
 </summary>
 
 <br>
 
-In this example snippet, we're using the `origins:origin` entity condition type to check if the player has the `example:test_origin` origin, and the `origins:advancement` entity condition type to check if the player has the `origins-limiter:can_pick/origin/test_origin` advancement, which is the `.json` file made in step 1.
+In this example snippet, we're using the `origins:origin` entity condition type to check if the player has the `example:test_origin` origin, and the `origins:advancement` entity condition type to check if the player has the `origins-limiter:can_pick/example/test_origin` advancement, which is the `.json` file made in step 1.
 
 ```json
 {
