@@ -1,5 +1,3 @@
-#> origins-limiter:can_pick/example/test_origin
-
 #   Set the max count for this origin once (can then be changed in-game afterwards)
 execute unless score example:test_origin o-l.max = example:test_origin o-l.max run scoreboard players set example:test_origin o-l.max 1
 
