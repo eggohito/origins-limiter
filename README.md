@@ -45,6 +45,7 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 ```
 
 </details>
+<br>
 
 <details>
 <summary>
@@ -81,6 +82,7 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 ```
 
 </details>
+<br>
 
 <details>
 <summary>
@@ -100,6 +102,7 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 ```
 
 </details>
+<br>
 
 <details>
 <summary>
@@ -125,7 +128,7 @@ In this example snippet, we're using the `origins:origin` entity condition type 
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:can_pick/origin/test_origin"
+                        "advancement": "origins-limiter:can_pick/example/test_origin"
                     }
                 ]
             },
