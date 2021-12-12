@@ -84,12 +84,12 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 
 <details>
 <summary>
-<b>3.</b> Create an <code>origins.json</code> file in the <code>data/origins-limiter/tags/functions/can_pick</code> folder of <b>your datapack</b>. Afterwards, reference the namespace, path and ID of the function that you've created in step 2 inside the <code>origins.json</code> file's <code>values</code> string array field. 
+<b>3.</b> Create a <code>tick.json</code> file in the <code>data/origins-limiter/tags/functions</code> folder of <b>your datapack</b>. Afterwards, reference the namespace, path and ID of the function that you've created in step 2 inside the <code>tick.json</code> file's <code>values</code> string array field. 
 <br>
 <i>(In this example, we'll be calling the <code>test_origin</code> function that was created in the <code>origins-limiter:can_pick/example</code> folder previously):</i>
 </summary>
 
-`data/origins-limiter/tags/functions/can_pick/origins.json`
+`data/origins-limiter/tags/functions/tick.json`
 
 ```json
 {
