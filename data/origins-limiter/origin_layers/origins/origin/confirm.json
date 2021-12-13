@@ -10,7 +10,7 @@
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:can_pick/origin/test_origin"
+                        "advancement": "origins-limiter:can_pick/example/test_origin"
                     }
                 ]
             },
