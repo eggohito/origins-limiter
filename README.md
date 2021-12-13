@@ -24,7 +24,7 @@ Name | Type | Default | Description
 > ### :information_source: These are the steps for integrating the datapack library to your datapack. If you only want to limit the base origins, you don't have to follow these steps!
 <br>
 
-In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/tree/example) as our reference.
+In the following steps, we'll be using [this datapack](https://github.com/eggohito/origins-limiter/tree/example/test_origin) as our reference.
 
 <details>
 <summary>
