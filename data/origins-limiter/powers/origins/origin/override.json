@@ -1,0 +1,9 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
+        "type": "origins:execute_command",
+        "command": "origin set @s origins-limiter:origins/origin/confirm origins-limiter:empty"
+    },
+    "hidden": true
+}

@@ -1,6 +1,7 @@
 {
-    "type": "origins:action_on_callback",
-    "entity_action_chosen": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
         "type": "origins:and",
         "actions": [
             {
@@ -23,7 +24,7 @@
             },
             {
                 "type": "origins:execute_command",
-                "command": "origin set @s origins-limiter:origins/origin origins-limiter:empty"
+                "command": "origin set @s origins-limiter:origins/origin/confirm origins-limiter:empty"
             },
             {
                 "type": "origins:execute_command",

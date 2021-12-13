@@ -1,0 +1,57 @@
+{
+    "order": 2,
+    "name": "current status in the origins:origin layer",
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "origins-limiter:private/override"
+            },
+            "origins": [
+                "origins-limiter:origins/origin/override"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:empty",
+                        "layer": "origins-limiter:origins/origin/confirm"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:private/override",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:origins/origin/cancel"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:empty",
+                        "layer": "origins-limiter:origins/origin/confirm",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:private/override",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:empty"
+            ]
+        }
+    ],
+    "auto_choose": true
+}

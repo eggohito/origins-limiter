@@ -7,6 +7,6 @@
     },
     "order": 10,
     "impact": 0,
-    "name": "Cancel",
-    "description": "Cancel the origin picking process."
+    "name": "Restricted",
+    "description": "You've been restricted from having the chosen origin due to reaching the specified max players for that specific origin."
 }
