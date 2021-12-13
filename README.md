@@ -29,7 +29,7 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <summary>
 <b>1.</b> Create a <code>.json</code> file in the <code>data/origins-limiter/advancements/can_pick</code> folder of <b>your datapack</b>. For consistency, I would suggest naming the <code>.json</code> file after the origin that you want to limit.
 <br>
-<i>(In this example, we'll be naming it after the example origin. The namespace and ID of the example origin being <code>example:test_origin</code>):</i>
+<i>(In this example, we'll be creating a folder with its name being the namespace of the origin. We will also be naming the file after the ID of the origin. The namespace and ID of the example origin being <code>example:test_origin</code>):</i>
 </summary>
 
 `data/origins-limiter/advancements/can_pick/example/test_origin.json`
@@ -106,7 +106,7 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 
 <details>
 <summary>
-<b>4.</b> Create an <code>origin.json</code> file inside the <code>data/origins-limiter/origin_layers/origins</code> folder of <b>your datapack</b>. Inside the <code>origins</code> array field of the <code>origin.json</code> file, you would use <a href = "https://origins.readthedocs.io/en/latest/guides/data/origin_conditions_in_layers/">Origins' entity condition types</a> to check if the player has the origin that we want to limit, and the advancement that we made in step 1.
+<b>4.</b> Create a <code>confirm.json</code> file inside the <code>data/origins-limiter/origin_layers/origins/origin</code> folder of <b>your datapack</b>. Inside the <code>origins</code> array field of the <code>origin.json</code> file, you would use <a href = "https://origins.readthedocs.io/en/latest/guides/data/origin_conditions_in_layers/">Origins' entity condition types</a> to check if the player has the origin that we want to limit, and the advancement that we made in step 1.
 <br>
 <i>(In this example, we'll be checking if the player has the <code>example:test_origin</code> origin and the <code>origins-limiter:can_pick/example/test_origin</code> advancement):</i>
 </summary>
@@ -167,6 +167,7 @@ In order to ensure that your datapack will load <i>after</i> the datapack librar
 (e.g: in `data/example/functions/load.mcfunction`, `example:load` will be the full namespace, path and ID of the function.)
 
 </details>
+<br>
 
 ### Hard-dependency
 
