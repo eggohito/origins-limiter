@@ -1,0 +1,10 @@
+{
+    "powers": [
+        "origins-limiter:origins/origin/override"
+    ],
+    "icon": {
+        "item": "minecraft:structure_block"
+    },
+    "name": "Override",
+    "description": "You have overridden the limiter, enabling you to choose an origin without being restricted by the limiter."
+}

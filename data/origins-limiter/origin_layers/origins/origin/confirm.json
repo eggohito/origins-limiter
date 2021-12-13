@@ -1,6 +1,6 @@
 {
     "order": 1,
-    "name": "Origin (confirmation)",
+    "name": "confirmed Origin",
     "missing_name": "None",
     "missing_description": " ",
     "origins": [
@@ -192,9 +192,8 @@
             "origins": [
                 "origins-limiter:empty"
             ]
-        },
-        "origins-limiter:origins/origin/cancel"
+        }
     ],
     "auto_choose": true,
-    "hidden": true
+    "hidden": false
 }
