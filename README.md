@@ -15,6 +15,7 @@ Name | Type | Default | Description
 `o-l.cur` | Scoreboard Objective | _dynamic_ | Stores the current count of players that have a certain origin. The score of the score holders in this objective **cannot be modified**.
 `o-l.main` | Scoreboard Objective | | Stores the `updateInterval` score holder, and other private score holders.
 `updateInterval` | Score Holder | `10` | Determines how fast the score of the score holders in the `o-l.cur` objective updates in ticks.
+`origins-limiter.override` | Tag (added via `/tag`) | | Overrides the limiter system, meaning that the player can have their chosen origin, regardless if the max player count for that specific origin has been reached.
 
 <br>
 
