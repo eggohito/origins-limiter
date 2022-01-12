@@ -1,13 +1,12 @@
 ---
 name: Requesting Integration
-about: Request your datapack to have this datapack library integrated
-title: "[REQUEST]"
+about: Request a datapack/addon to have this datapack library integrated.
+title: "[REQUEST] <datapack/addon name>"
 labels: request
 assignees: eggohito
 
 ---
 
 **Requesting integration for:**
-* Datapack file (preferably `.zip`)
-* Datapack name
-* Datapack author
+* The datapack file (preferably `.zip`) or download link for the addon
+* The author of the datapack/addon
