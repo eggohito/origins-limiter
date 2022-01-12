@@ -1,0 +1,6 @@
+{
+    "values": [
+        "origins-limiter:config/default/cancel_message",
+        "origins-limiter:config/default/update_interval"
+    ]
+}
