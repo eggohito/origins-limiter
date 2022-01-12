@@ -16,9 +16,9 @@ execute if score #currentInterval o-l.main matches 0 run function #origins-limit
 
 
 #   Determine if a player can override the limiter system
-advancement grant @a[tag = origins-limiter.override, advancements = {origins-limiter:private/override = false}] only origins-limiter:private/override
+advancement grant @a[tag = origins-limiter.override, advancements = {origins-limiter:override = false}] only origins-limiter:override
 
-advancement revoke @a[tag = !origins-limiter.override, advancements = {origins-limiter:private/override = true}] only origins-limiter:private/override
+advancement revoke @a[tag = !origins-limiter.override, advancements = {origins-limiter:override = true}] only origins-limiter:override
 
 
 #   `/schedule`-loop this function
