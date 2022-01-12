@@ -5,10 +5,10 @@
         {
             "condition": {
                 "type": "origins:advancement",
-                "advancement": "origins-limiter:private/override"
+                "advancement": "origins-limiter:override"
             },
             "origins": [
-                "origins-limiter:origins/origin/override"
+                "origins-limiter:override"
             ]
         },
         {
@@ -18,17 +18,17 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins:empty",
-                        "layer": "origins-limiter:origins/origin/confirm"
+                        "layer": "origins-limiter:confirm/origins/origin"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:private/override",
+                        "advancement": "origins-limiter:override",
                         "inverted": true
                     }
                 ]
             },
             "origins": [
-                "origins-limiter:origins/origin/cancel"
+                "origins-limiter:cancel"
             ]
         },
         {
@@ -38,12 +38,12 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins:empty",
-                        "layer": "origins-limiter:origins/origin/confirm",
+                        "layer": "origins-limiter:confirm/origins/origin",
                         "inverted": true
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:private/override",
+                        "advancement": "origins-limiter:override",
                         "inverted": true
                     }
                 ]
