@@ -1,0 +1,57 @@
+{
+    "order": 12,
+    "name": "current status in the origins-classes:class layer",
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "origins-limiter:override"
+            },
+            "origins": [
+                "origins-limiter:override"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:empty",
+                        "layer": "origins-limiter:confirm/origins-classes/class"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:override",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:cancel"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:empty",
+                        "layer": "origins-limiter:confirm/origins-classes/class",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:override",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:empty"
+            ]
+        }
+    ],
+    "auto_choose": true
+}

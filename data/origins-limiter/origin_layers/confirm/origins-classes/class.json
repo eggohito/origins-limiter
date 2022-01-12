@@ -1,0 +1,270 @@
+{
+    "order": 11,
+    "name": "confirmed Class",
+    "missing_name": "None",
+    "missing_description": " ",
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": false
+            },
+            "origins": [
+                "origins-limiter:empty"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:archer"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/archer"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:archer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:beastmaster"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/beastmaster"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:beastmaster"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:blacksmith"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/blacksmith"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:blacksmith"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:cleric"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/cleric"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:cleric"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:cook"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/cook"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:cook"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:explorer"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/explorer"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:explorer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:farmer"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/farmer"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:farmer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:lumberjack"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/lumberjack"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:lumberjack"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:merchant"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/merchant"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:merchant"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:miner"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/miner"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:miner"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:nitwit"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/nitwit"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:nitwit"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:rancher"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/rancher"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:rancher"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:rogue"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/rogue"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:rogue"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:warrior"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins-classes/warrior"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:warrior"
+            ]
+        }
+    ],
+    "auto_choose": true
+}

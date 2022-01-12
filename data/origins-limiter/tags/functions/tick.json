@@ -1,0 +1,18 @@
+{
+    "values": [
+        "origins-limiter:can_pick/origins-classes/archer",
+        "origins-limiter:can_pick/origins-classes/beastmaster",
+        "origins-limiter:can_pick/origins-classes/blacksmith",
+        "origins-limiter:can_pick/origins-classes/cleric",
+        "origins-limiter:can_pick/origins-classes/cook",
+        "origins-limiter:can_pick/origins-classes/explorer",
+        "origins-limiter:can_pick/origins-classes/farmer",
+        "origins-limiter:can_pick/origins-classes/lumberjack",
+        "origins-limiter:can_pick/origins-classes/merchant",
+        "origins-limiter:can_pick/origins-classes/miner",
+        "origins-limiter:can_pick/origins-classes/nitwit",
+        "origins-limiter:can_pick/origins-classes/rancher",
+        "origins-limiter:can_pick/origins-classes/rogue",
+        "origins-limiter:can_pick/origins-classes/warrior"
+    ]
+}
