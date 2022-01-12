@@ -2,20 +2,38 @@
 
 A datapack library that can limit how many players can have a certain origin.
 
-If you don't want to (or don't know how to) do the manual work of integrating the datapack library to your datapck, you can create an issue using the ['requesting integration'](https://github.com/eggohito/origins-limiter/issues/new?assignees=eggohito&labels=request&template=requesting-integration.md&title=%5BREQUEST%5D) issue template to this repository's issue tracker.
+If you don't want to (or don't know how to) do the manual work of integrating the datapack library to your datapack, you can create an issue using the ['requesting integration'](https://github.com/eggohito/origins-limiter/issues/new?assignees=eggohito&labels=request&template=requesting-integration.md&title=%5BREQUEST%5D) issue template to this repository's issue tracker.
 
 <br>
 
-## Customizability
-This datapack library provides some scoreboard objectives that you can either modify the scores of the score holders in it, or just read the value of with `/scoreboard`:
+## Customizing
 
-Name | Type | Default | Description
------|------|---------|------------
-`o-l.max` | Scoreboard Objective | `1` | Stores the max count of players that can have a certain origin. The score of the score holders in this objective **can be modified**.
-`o-l.cur` | Scoreboard Objective | _dynamic_ | Stores the current count of players that have a certain origin. The score of the score holders in this objective **cannot be modified**.
-`o-l.main` | Scoreboard Objective | | Stores the `updateInterval` score holder, and other private score holders.
-`updateInterval` | Score Holder | `10` | Determines how fast the score of the score holders in the `o-l.cur` objective updates in ticks.
-`origins-limiter.override` | Tag (added via `/tag`) | | Overrides the limiter system, meaning that the player can have their chosen origin, regardless if the max player count for that specific origin has been reached.
+### Scoreboard Objectives
+This datapack library provides some scoreboard objectives for configuration.
+
+Name       | Description
+-----------|------------
+`o-l.max`  | Stores the max count of players that can have a certain origin.
+`o-l.cur`  | Stores the current count of players that have a certain origin.
+`o-l.main` | Stores the `updateInterval` score holder, and other private score holders.
+
+
+### Score Holders
+This datapack library provides some score holders that you can modify or only read the value of from the scoreboard objectives listed above.
+
+Name                       | Description
+---------------------------|------------
+`updateInterval`           | Determines how fast the score of the score holders in the `o-l.cur` scoreboard objective is updated in ticks.
+Score Holders in `o-l.cur` | The score of the score holders in the `o-l.cur` scoreboard objective **cannot be modified.**
+Score Holders in `o-l.max` | The score of the score holders in the `o-l.max` scoreboard objective **can be modified.**
+
+
+### Tags
+This datapack library provides a tag only for overriding the entire limiter system just in case some origins aren't integrated to the system yet, or just because.
+
+Name                       | Description
+---------------------------|------------
+`origins-limiter.override` | Enables the player to have their chosen origin, regardless if the max player count for that specific origin has been reached.
 
 <br>
 
@@ -29,9 +47,13 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <details>
 <summary>
 <b>1.</b> Create a <code>.json</code> file in the <code>data/origins-limiter/advancements/can_pick</code> folder of <b>your datapack</b>. For consistency, I would suggest naming the <code>.json</code> file after the origin that you want to limit.
+
 <br>
-<i>(In this example, we'll be creating a folder with its name being the namespace of the origin. We will also be naming the file after the ID of the origin. The namespace and ID of the example origin being <code>example:test_origin</code>):</i>
+
+<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.mcfunction</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
 </summary>
+
+<br>
 
 `data/origins-limiter/advancements/can_pick/example/test_origin.json`
 
@@ -46,14 +68,19 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 ```
 
 </details>
+
 <br>
 
 <details>
 <summary>
 <b>2.</b> Create an <code>.mcfunction</code> file in the <code>data/origins-limiter/functions/can_pick</code> folder in <b>your datapack</b>. This function will be the one responsible for counting how many players currently have the origin that we want to limit.
+
 <br>
-<i>(Which will be <code>example:test_origin</code> in the example's case):</i>
+
+<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.mcfunction</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
 </summary>
+
+<br>
 
 `data/origins-limiter/functions/can_pick/example/test_origin.mcfunction`
 
@@ -83,14 +110,19 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 ```
 
 </details>
+
 <br>
 
 <details>
 <summary>
 <b>3.</b> Create a <code>tick.json</code> file in the <code>data/origins-limiter/tags/functions</code> folder of <b>your datapack</b>. Afterwards, reference the namespace, path and ID of the function that you've created in step 2 inside the <code>tick.json</code> file's <code>values</code> string array field. 
+
 <br>
-<i>(In this example, we'll be calling the <code>test_origin</code> function that was created in the <code>origins-limiter:can_pick/example</code> folder previously):</i>
+
+<i>(In this example, we'll be calling the function that was created in the previous step):</i>
 </summary>
+
+<br>
 
 `data/origins-limiter/tags/functions/tick.json`
 
@@ -103,12 +135,15 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 ```
 
 </details>
+
 <br>
 
 <details>
 <summary>
-<b>4.</b> Create a <code>confirm.json</code> file inside the <code>data/origins-limiter/origin_layers/origins/origin</code> folder of <b>your datapack</b>. Inside the <code>origins</code> array field of the <code>origin.json</code> file, you would use <a href = "https://origins.readthedocs.io/en/latest/guides/data/origin_conditions_in_layers/">Origins' entity condition types</a> to check if the player has the origin that we want to limit, and the advancement that we made in step 1.
+<b>4.</b> Create an <code>origin.json</code> file inside the <code>data/origins-limiter/origin_layers/confirm/origins</code> folder of <b>your datapack</b>. Inside the <code>origins</code> array field of the <code>origin.json</code> file, you would use <a href = "https://origins.readthedocs.io/en/latest/guides/data/origin_conditions_in_layers/">Origins' entity condition types</a> to check if the player has the origin that we want to limit, and the advancement that we made in step 1.
+
 <br>
+
 <i>(In this example, we'll be checking if the player has the <code>example:test_origin</code> origin and the <code>origins-limiter:can_pick/example/test_origin</code> advancement):</i>
 </summary>
 
