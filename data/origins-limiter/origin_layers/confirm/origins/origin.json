@@ -6,6 +6,15 @@
     "origins": [
         {
             "condition": {
+                "type": "origins:constant",
+                "value": false
+            },
+            "origins": [
+                "origins-limiter:empty"
+            ]
+        },
+        {
+            "condition": {
                 "type": "origins:and",
                 "conditions": [
                     {
@@ -182,15 +191,6 @@
             },
             "origins": [
                 "origins:shulk"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:constant",
-                "value": false
-            },
-            "origins": [
-                "origins-limiter:empty"
             ]
         }
     ],

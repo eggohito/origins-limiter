@@ -1,0 +1,12 @@
+{
+    "powers": [
+        "origins-limiter:cancel"
+    ],
+    "icon": {
+        "item": "minecraft:barrier"
+    },
+    "order": 10,
+    "impact": 0,
+    "name": "Restricted",
+    "description": "You've been restricted from having the chosen origin(s) due to reaching the specified max players for either or both of the chosen origin(s)."
+}
