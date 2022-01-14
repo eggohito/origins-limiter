@@ -52,7 +52,7 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <br>
 <br>
 
-<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.mcfunction</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
+<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.json</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
 </summary>
 
 <br>
