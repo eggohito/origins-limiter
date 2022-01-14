@@ -52,7 +52,7 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <br>
 <br>
 
-<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.mcfunction</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
+<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.json</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
 </summary>
 
 <br>
@@ -212,7 +212,7 @@ In order to ensure that your datapack will load <i>after</i> the datapack librar
 
 ### Hard-dependency
 
-If you want to check if a specific version of the datapack library is loaded, you can check for the `origins-limiter.major`, `origins-limiter.minor` and `origins-limiter.patch` score holders from the `load.status` scoreboard objective. There is also the `root.semver.major`, `root.semver.minor` and `root.semver.patch` NBT paths from the `origins-limiter:main` that you can check for.
+If you want to check if a specific version of the datapack library is loaded, you can check for the `origins-limiter.major`, `origins-limiter.minor` and `origins-limiter.patch` score holders from the `load` scoreboard objective. There is also the `root.semver.major`, `root.semver.minor` and `root.semver.patch` NBT paths from the `origins-limiter:main` that you can check for.
 
 
 <details>
