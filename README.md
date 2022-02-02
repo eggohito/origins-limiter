@@ -8,6 +8,20 @@ If you don't want to (or don't know how to) do the manual work of integrating th
 
 ## Customizing
 
+
+### Override
+This datapack library allows you to override the limiter system if you don't have the system integrated for some of the origins/origin layers that you may have. It can be done so by granting a certain advancement to a player using the `/advancement` command, like so:
+
+```mcfunction
+#   In this example, we will grant the override to ourselves for the `origins:origin` origin layer, the default origin layer
+advancement grant @s only origins-limiter:status/override/origins/origin
+
+
+#   If we want to remove the override we just granted, we can simply revoke the advancement
+advancement revoke @s only origins-limiter:status/override/origins/origin
+```
+
+
 ### Scoreboard Objectives
 This datapack library provides some scoreboard objectives for configuration.
 
@@ -26,15 +40,6 @@ Name                                | Description
 `updateInterval` in <br> `o-l.main` | Determines how fast the score of the score holders in the `o-l.cur` scoreboard objective is updated in ticks.
 Score Holders in <br> `o-l.cur`     | The score of the score holders in the `o-l.cur` scoreboard objective **cannot be modified.**
 Score Holders in <br> `o-l.max`     | The score of the score holders in the `o-l.max` scoreboard objective **can be modified.**
-
-
-### Tags
-This datapack library provides a tag only for overriding the entire limiter system just in case some origins aren't integrated to the system yet, or just because.
-The `<prefix>` being `origins-limiter`.
-
-Name                | Description
---------------------|------------
-`<prefix>.override` | Enables the player to have their chosen origin, regardless if the max player count for that specific origin has been reached.
 
 <br>
 
