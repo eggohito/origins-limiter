@@ -1,7 +1,5 @@
 {
-    "powers": [
-        "origins-limiter:override"
-    ],
+    "powers": [],
     "icon": {
         "item": "minecraft:structure_block"
     },

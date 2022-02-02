@@ -1,4 +1,4 @@
-#> origins-limiter:private/load
+#> origins-limiter:load
 #
 #   > The main load function for the `origins-limiter` namespace
 #
@@ -16,13 +16,15 @@ scoreboard objectives add o-l.max dummy
 #   Remove old and will-be-unused data from 2.1.0
 execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 1 run scoreboard players reset #loaded o-l.main
 
+execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 1 run data remove storage origins-limiter:main root
+
 
 #   Set variables
 execute unless score #loaded o-l.main = #loaded o-l.main run function #origins-limiter:config/default
 
 
 #   Set semantic version
-function origins-limiter:private/set_semver
+function origins-limiter:private/semantic_version/set
 
 
 #   Display a load/reload message
@@ -37,4 +39,4 @@ scoreboard players set #loaded o-l.main 1
 
 
 #   Re-initialize tick function
-schedule function origins-limiter:private/tick 1t replace
+schedule function origins-limiter:tick 1t replace

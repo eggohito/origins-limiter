@@ -1,7 +1,5 @@
 {
-    "powers": [
-        "origins-limiter:cancel"
-    ],
+    "powers": [],
     "icon": {
         "item": "minecraft:barrier"
     },
