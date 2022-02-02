@@ -1,8 +1,8 @@
-#> origins-limiter:private/set_semver
+#> origins-limiter:private/semantic_version/set
 #
-#@within
-#   *:private/load
-#   *:private/load/**
+#   > Set the semantic version
+#
+#@within function origins-limiter:load
 
 
 data modify storage origins-limiter:main root.semver.major set value 2

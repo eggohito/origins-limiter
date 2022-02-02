@@ -1,6 +1,6 @@
 {
     "criteria": {
-        "root": {
+        "dummy": {
             "trigger": "minecraft:impossible"
         }
     }

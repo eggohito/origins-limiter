@@ -1,5 +1,5 @@
 {
     "values": [
-        "origins-limiter:private/load"
+        "origins-limiter:load"
     ]
 }

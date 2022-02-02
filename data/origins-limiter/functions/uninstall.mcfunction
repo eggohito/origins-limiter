@@ -10,7 +10,7 @@ tellraw @a {"translate": "[- Disabled \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]",
 
 
 #   Clear scheduled function(s)
-schedule clear origins-limiter:private/tick
+schedule clear origins-limiter:tick
 
 
 #   Remove scoreboard objective(s)
