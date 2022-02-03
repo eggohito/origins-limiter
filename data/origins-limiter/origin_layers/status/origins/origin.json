@@ -23,7 +23,7 @@
         {
             "condition": {
                 "type": "origins:advancement",
-                "advancement": "origins-limiter:status/override/origins/origin"
+                "advancement": "origins-limiter:status/override"
             },
             "origins": [
                 "origins-limiter:status/override"
@@ -40,7 +40,7 @@
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:status/override/origins/origin",
+                        "advancement": "origins-limiter:status/override",
                         "inverted": true
                     }
                 ]
@@ -61,7 +61,7 @@
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:status/override/origins/origin",
+                        "advancement": "origins-limiter:status/override",
                         "inverted": true
                     }
                 ]
