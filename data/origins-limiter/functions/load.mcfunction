@@ -14,9 +14,9 @@ scoreboard objectives add o-l.max dummy
 
 
 #   Remove old and will-be-unused data from 2.1.0
-execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 1 run scoreboard players reset #loaded o-l.main
+execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 2 run scoreboard players reset #loaded o-l.main
 
-execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 1 run data remove storage origins-limiter:main root
+execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 2 run data remove storage origins-limiter:main root
 
 
 #   Set variables

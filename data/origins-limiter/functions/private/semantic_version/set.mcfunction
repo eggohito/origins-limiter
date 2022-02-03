@@ -7,7 +7,7 @@
 
 data modify storage origins-limiter:main root.semver.major set value 2
 
-data modify storage origins-limiter:main root.semver.minor set value 2
+data modify storage origins-limiter:main root.semver.minor set value 3
 
 data modify storage origins-limiter:main root.semver.patch set value 0
 

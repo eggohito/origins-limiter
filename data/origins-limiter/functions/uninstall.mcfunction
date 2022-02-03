@@ -26,6 +26,6 @@ data remove storage origins-limiter:main root
 
 
 #   Disable the datapack
-datapack disable "file/origins-limiter_v2.2.0"
+datapack disable "file/origins-limiter_v2.3.0"
 
-datapack disable "file/origins-limiter_v2.2.0.zip"
+datapack disable "file/origins-limiter_v2.3.0.zip"
