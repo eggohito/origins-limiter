@@ -10,15 +10,15 @@ If you don't want to (or don't know how to) do the manual work of integrating th
 
 
 ### Override
-This datapack library allows you to override the limiter system if you don't have the system integrated for some of the origins/origin layers that you may have. It can be done so by granting a certain advancement to a player using the `/advancement` command, like so:
+This datapack library allows you to override the limiter system. It can be done so by granting a certain advancement to a player using the `/advancement` command, like so:
 
 ```mcfunction
-#   In this example, we will grant the override to ourselves for the `origins:origin` origin layer, the default origin layer
-advancement grant @s only origins-limiter:status/override/origins/origin
+#   If we want to override the limiter system, we can simply grant the advancement
+advancement grant @s only origins-limiter:status/override
 
 
 #   If we want to remove the override we just granted, we can simply revoke the advancement
-advancement revoke @s only origins-limiter:status/override/origins/origin
+advancement revoke @s only origins-limiter:status/override
 ```
 
 
