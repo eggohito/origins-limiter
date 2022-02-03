@@ -1,0 +1,10 @@
+{
+    "powers": [],
+    "icon": {
+        "item": "minecraft:structure_block"
+    },
+    "order": 0,
+    "impact": 0,
+    "name": "EXAMPLE",
+    "description": "An origin for testing purposes."
+}

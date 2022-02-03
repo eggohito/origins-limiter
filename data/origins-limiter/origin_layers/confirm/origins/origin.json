@@ -6,16 +6,16 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
-                        "origin": "example:test_origin"
+                        "origin": "example:origin"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:can_pick/example/test_origin"
+                        "advancement": "origins-limiter:can_pick/example/origin"
                     }
                 ]
             },
             "origins": [
-                "example:test_origin"
+                "example:origin"
             ]
         }
     ]
