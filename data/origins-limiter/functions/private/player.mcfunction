@@ -6,4 +6,4 @@
 
 
 #   Determine if the player has cancelled or overriden the origin picking process
-function origins-limiter:status/check
+function #origins-limiter:status/check
