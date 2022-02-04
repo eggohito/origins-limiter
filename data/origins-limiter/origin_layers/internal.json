@@ -1,0 +1,8 @@
+{
+    "order": 10000,
+    "name": "Limiter",
+    "origins": [
+        "origins-limiter:internal"
+    ],
+    "auto_choose": true
+}

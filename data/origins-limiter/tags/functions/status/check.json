@@ -1,5 +1,6 @@
 {
     "values": [
+        "origins-limiter:private/player/get_layers",
         "origins-limiter:status/check/origins/origin"
     ]
 }
