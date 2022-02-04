@@ -1,0 +1,15 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
+        "type": "origins:give",
+        "stack": {
+            "item": "origins:orb_of_origin"
+        }
+    },
+    "condition": {
+        "type": "origins:origin",
+        "origin": "origins-limiter:status/cancel/done"
+    },
+    "hidden": true
+}
