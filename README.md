@@ -9,16 +9,16 @@ If you don't want to (or don't know how to) do the manual work of integrating th
 ## Customizing
 
 
-### Override
-This datapack library allows you to override the limiter system. It can be done so by granting a certain advancement to a player using the `/advancement` command, like so:
+### Excluding players
+This datapack library allows you to exclude certain players from being restricted by the limiter system with the use of the `origins-limiter.ignore` tag. It can be granted/revoked like so:
 
 ```mcfunction
-#   If we want to override the limiter system, we can simply grant the advancement
-advancement grant @s only origins-limiter:status/override
+#   - 'username' being the username of the player that you wish to exclude from the restriction
+tag username add origins-limiter.ignore
 
 
-#   If we want to remove the override we just granted, we can simply revoke the advancement
-advancement revoke @s only origins-limiter:status/override
+#   - 'username' being the username of the player that you wish to include in the restriction
+tag username remove origins-limiter.ignore
 ```
 
 
@@ -57,12 +57,12 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <br>
 <br>
 
-<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.json</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
+<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.json</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:origin</code>):</i>
 </summary>
 
 <br>
 
-`data/origins-limiter/advancements/can_pick/example/test_origin.json`
+`data/origins-limiter/advancements/can_pick/example/origin.json`
 
 ```json
 {
@@ -85,36 +85,39 @@ In the following steps, we'll be using [this datapack](https://github.com/eggohi
 <br>
 <br>
 
-<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.mcfunction</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:test_origin</code>):</i>
+<i>(In this example, we'll be creating a folder named after the namespace of the origin, and name the <code>.mcfunction</code> file after the ID of the origin. The namespace and ID of the origin being <code>example:origin</code>):</i>
 </summary>
 
 <br>
 
-`data/origins-limiter/functions/can_pick/example/test_origin.mcfunction`
+`data/origins-limiter/functions/can_pick/example/origin.mcfunction`
 
 ```mcfunction
+#
 #   Set the max count for this origin once (can then be changed in-game afterwards)
 #
-#   - o-l.max     = the scoreboard objective that stores the max count for the origin
-#   - example:test_origin = the score holder for the origin that we want to apply the limit to
+#   - `example:origin` = being the namespace and ID of the origin that you wish to limit 
 #
-execute unless score example:test_origin o-l.max = example:test_origin o-l.max run scoreboard players set example:test_origin o-l.max 1
+execute unless score example:origin o-l.max = example:origin o-l.max run scoreboard players set example:origin o-l.max 1
 
 
+#
 #   Store the count of the players that currently have this origin
 #
-#   - "example:test_origin" = the namespace and ID of the origin that we want to apply the limit to
+#   - `example:origin` = being the namespace and ID of the origin that you wish to limit
 #
-execute store result score example:test_origin o-l.cur if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "example:test_origin"}]}}}]
+execute store result score example:origin o-l.cur if entity @a[tag = !origins-limiter.ignore, nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "example:origin"}]}}}]
 
 
+#
 #   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise
 #
-#   - origins-limiter:can_pick/example/test_origin = the .json file that we made in the first step
+#   - `example:origin` = being the namespace and ID of the origin that you wish to limit
+#   - `origins-limiter:can_pick/example/origin` = being the advancement you made for the origin
 #
-execute if score example:test_origin o-l.cur < example:test_origin o-l.max run advancement grant @a only origins-limiter:can_pick/example/test_origin
+execute if score example:origin o-l.cur < example:origin o-l.max run advancement grant @a only origins-limiter:can_pick/example/origin
 
-execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run advancement revoke @a only origins-limiter:can_pick/example/test_origin
+execute if score example:origin o-l.cur >= example:origin o-l.max run advancement revoke @a only origins-limiter:can_pick/example/origin
 ```
 
 </details>
@@ -138,7 +141,7 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 ```json
 {
     "values": [
-        "origins-limiter:can_pick/example/test_origin"
+        "origins-limiter:can_pick/example/origin"
     ]
 }
 ```
@@ -154,12 +157,12 @@ execute if score example:test_origin o-l.cur >= example:test_origin o-l.max run 
 <br>
 <br>
 
-<i>(In this example, we'll be checking if the player has the <code>example:test_origin</code> origin and the <code>origins-limiter:can_pick/example/test_origin</code> advancement):</i>
+<i>(In this example, we'll be checking if the player has the <code>example:origin</code> origin and the <code>origins-limiter:can_pick/example/origin</code> advancement):</i>
 </summary>
 
 <br>
 
-In this example snippet, we're using the `origins:origin` entity condition type to check if the player has the `example:test_origin` origin, and the `origins:advancement` entity condition type to check if the player has the `origins-limiter:can_pick/example/test_origin` advancement, which is the `.json` file made in step 1.
+In this example snippet, we're using the `origins:origin` entity condition type to check if the player has the `example:origin` origin, and the `origins:advancement` entity condition type to check if the player has the `origins-limiter:can_pick/example/origin` advancement, which is the `.json` file made in step 1.
 
 ```json
 {
@@ -170,16 +173,45 @@ In this example snippet, we're using the `origins:origin` entity condition type 
                 "conditions": [
                     {
                         "type": "origins:origin",
-                        "origin": "example:test_origin"
+                        "origin": "example:origin"
                     },
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:can_pick/example/test_origin"
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/example/origin"
                     }
                 ]
             },
             "origins": [
-                "example:test_origin"
+                "example:origin"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "example:origin"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/example/origin",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
             ]
         }
     ]
