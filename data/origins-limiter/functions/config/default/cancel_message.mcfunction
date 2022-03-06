@@ -5,4 +5,4 @@
 #@within function *:private/load
 
 
-data modify storage origins-limiter:main root.msg.cancel."origins:origin" set value '{"text": "You\'ve been restricted from picking an origin from the \'origins:origin\' layer", "color": "red"}'
+data modify storage origins-limiter:main root.msg.cancel."origins:origin" set value '{"text": "You\'ve been restricted from choosing an origin from the \'origins:origin\' layer", "color": "red"}'

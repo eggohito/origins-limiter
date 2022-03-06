@@ -2,14 +2,27 @@
     "type": "origins:action_over_time",
     "interval": 1,
     "rising_action": {
-        "type": "origins:give",
-        "stack": {
-            "item": "origins:orb_of_origin"
-        }
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:give",
+                "stack": {
+                    "item": "origins:orb_of_origin"
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "advancement revoke @s only origins-limiter:status/restrict"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "function #origins-limiter:status/restrict"
+            }
+        ]
     },
     "condition": {
-        "type": "origins:origin",
-        "origin": "origins-limiter:status/cancel/done"
+        "type": "origins:advancement",
+        "advancement": "origins-limiter:status/restrict"
     },
     "hidden": true
 }

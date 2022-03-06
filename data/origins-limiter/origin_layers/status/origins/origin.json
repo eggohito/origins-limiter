@@ -1,75 +1,30 @@
 {
     "order": 2,
-    "name": "current status in the origins:origin layer",
+    "name": "status in the origins:origin layer",
+    "missing_name": "None",
+    "missing_description": " ",
     "origins": [
         {
             "condition": {
-                "type": "origins:constant",
-                "value": false
+                "type": "origins:origin",
+                "origin": "origins-limiter:status/restrict",
+                "layer": "origins-limiter:confirm/origins/origin"
             },
             "origins": [
-                "origins-limiter:status/override/done"
+                "origins-limiter:status/origins/origin/restricted"
             ]
         },
         {
             "condition": {
-                "type": "origins:constant",
-                "value": false
+                "type": "origins:origin",
+                "origin": "origins:empty",
+                "layer": "origins-limiter:confirm/origins/origin"
             },
             "origins": [
-                "origins-limiter:status/cancel/done"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:advancement",
-                "advancement": "origins-limiter:status/override"
-            },
-            "origins": [
-                "origins-limiter:status/override"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:origin",
-                        "origin": "origins:empty",
-                        "layer": "origins-limiter:confirm/origins/origin"
-                    },
-                    {
-                        "type": "origins:advancement",
-                        "advancement": "origins-limiter:status/override",
-                        "inverted": true
-                    }
-                ]
-            },
-            "origins": [
-                "origins-limiter:status/cancel"
-            ]
-        },
-        {
-            "condition": {
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:origin",
-                        "origin": "origins:empty",
-                        "layer": "origins-limiter:confirm/origins/origin",
-                        "inverted": true
-                    },
-                    {
-                        "type": "origins:advancement",
-                        "advancement": "origins-limiter:status/override",
-                        "inverted": true
-                    }
-                ]
-            },
-            "origins": [
-                "origins-limiter:empty"
+                "origins-limiter:status/origins/origin/ignored"
             ]
         }
     ],
-    "auto_choose": true
+    "auto_choose": true,
+    "hidden": false
 }

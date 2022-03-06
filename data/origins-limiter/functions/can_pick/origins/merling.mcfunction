@@ -3,7 +3,7 @@ execute unless score origins:merling o-l.max = origins:merling o-l.max run score
 
 
 #   Store the count of the players that currently have this origin
-execute store result score origins:merling o-l.cur if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:merling"}]}}}]
+execute store result score origins:merling o-l.cur if entity @a[tag = !origins-limiter.ignore, nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:merling"}]}}}]
 
 
 #   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise

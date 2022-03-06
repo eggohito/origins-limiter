@@ -10,7 +10,8 @@
                 "value": false
             },
             "origins": [
-                "origins-limiter:empty"
+                "origins-limiter:empty",
+                "origins-limiter:pass"
             ]
         },
         {
@@ -20,6 +21,11 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins:arachnid"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -37,7 +43,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:arachnid"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/arachnid",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:avian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -55,7 +90,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:avian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/avian",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:blazeborn"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -73,7 +137,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:blazeborn"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/blazeborn",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:elytrian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -91,7 +184,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:elytrian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/elytrian",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:enderian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -109,7 +231,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:enderian"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/enderian",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:feline"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -127,7 +278,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:feline"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/feline",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:human"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -145,7 +325,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:human"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/human",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:merling"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -163,7 +372,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:merling"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/merling",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:phantom"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -181,7 +419,36 @@
                 "conditions": [
                     {
                         "type": "origins:origin",
+                        "origin": "origins:phantom"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/phantom",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
                         "origin": "origins:shulk"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
                     },
                     {
                         "type": "origins:advancement",
@@ -191,6 +458,30 @@
             },
             "origins": [
                 "origins:shulk"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins:shulk"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:status/ignore",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pick/origins/shulk",
+                        "inverted": true
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:status/restrict"
             ]
         }
     ],
