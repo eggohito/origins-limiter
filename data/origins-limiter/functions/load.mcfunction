@@ -5,18 +5,18 @@
 #@within tag/function load:load
 
 
+#   Remove old and will-be-unused data from 2.x.x
+function origins-limiter:private/semantic_version/get
+
+execute if score origins-limiter.major load.status matches 2 run function origins-limiter:private/clear_prev_data
+
+
 #   Add scoreboard objective(s)
 scoreboard objectives add o-l.main dummy
 
 scoreboard objectives add o-l.cur dummy
 
 scoreboard objectives add o-l.max dummy
-
-
-#   Remove old and will-be-unused data from 2.2.0
-execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 2 run scoreboard players reset #loaded o-l.main
-
-execute if score origins-limiter.major load.status matches 2 if score origins-limiter.minor load.status matches 2 run data remove storage origins-limiter:main root
 
 
 #   Set variables
