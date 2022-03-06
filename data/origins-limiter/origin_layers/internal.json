@@ -1,5 +1,5 @@
 {
-    "order": 10000,
+    "order": 2147483647,
     "name": "Limiter",
     "origins": [
         "origins-limiter:internal"

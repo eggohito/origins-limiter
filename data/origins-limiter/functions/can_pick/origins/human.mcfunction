@@ -3,7 +3,7 @@ execute unless score origins:human o-l.max = origins:human o-l.max run scoreboar
 
 
 #   Store the count of the players that currently have this origin
-execute store result score origins:human o-l.cur if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:human"}]}}}]
+execute store result score origins:human o-l.cur if entity @a[tag = !origins-limiter.ignore, nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:human"}]}}}]
 
 
 #   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise

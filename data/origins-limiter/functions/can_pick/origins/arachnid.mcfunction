@@ -3,7 +3,7 @@ execute unless score origins:arachnid o-l.max = origins:arachnid o-l.max run sco
 
 
 #   Store the count of the players that currently have this origin
-execute store result score origins:arachnid o-l.cur if entity @a[nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:arachnid"}]}}}]
+execute store result score origins:arachnid o-l.cur if entity @a[tag = !origins-limiter.ignore, nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins:arachnid"}]}}}]
 
 
 #   Grant the player an advancement to indicate that the player can choose the origin. Revoke the advancement otherwise
