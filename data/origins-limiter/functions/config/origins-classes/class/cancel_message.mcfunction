@@ -1,4 +1,4 @@
-#> origins-limiter:config/origins-classes/cancel_message
+#> origins-limiter:config/origins-classes/class/cancel_message
 #
 #   > Set the default cancel message for Origins Classes
 #
