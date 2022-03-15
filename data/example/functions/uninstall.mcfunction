@@ -8,6 +8,6 @@ tellraw @a {"text": "[- Disabled \"Limiter (Origins/Example)\"]", "color": "red"
 
 
 #   Disable the datapack
-datapack disable "file/origins-limiter_example"
+datapack disable "file/example-limiter"
 
-datapack disable "file/origins-limiter_example.zip"
+datapack disable "file/example-limiter.zip"
