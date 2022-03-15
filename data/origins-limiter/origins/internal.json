@@ -1,0 +1,10 @@
+{
+    "powers": [
+        "origins-limiter:internal"
+    ],
+    "icon": {
+        "item": "minecraft:structure_block"
+    },
+    "name": "Origins",
+    "description": "Limits how many players can have a certain origin in any origin layer."
+}
