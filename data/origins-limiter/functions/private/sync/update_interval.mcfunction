@@ -1,4 +1,4 @@
-#> origins-limiter:private/interval/sync
+#> origins-limiter:private/sync/update_interval
 #
 #   > Synchronize the score of the `updateInterval` variable to its hidden counterpart
 #

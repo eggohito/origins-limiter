@@ -2,13 +2,11 @@
 #
 #   > The main load function for the `origins-limiter` namespace
 #
-#@within tag/function load:load
+#@within tag/function origins-limiter:load
 
 
-#   Remove old and will-be-unused data from 2.x.x
-function origins-limiter:private/semantic_version/get
-
-execute if score origins-limiter.major load.status matches 2 run function origins-limiter:private/clear_prev_data
+#   Call the `origins-limiter:private/update` function just in case updating stuff is needed
+function origins-limiter:private/update
 
 
 #   Add scoreboard objective(s)
@@ -17,10 +15,6 @@ scoreboard objectives add o-l.main dummy
 scoreboard objectives add o-l.cur dummy
 
 scoreboard objectives add o-l.max dummy
-
-
-#   Set variables
-execute unless score #loaded o-l.main = #loaded o-l.main run function #origins-limiter:config/default
 
 
 #   Set semantic version
