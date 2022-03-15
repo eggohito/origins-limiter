@@ -1,5 +1,5 @@
 {
     "values": [
-        "origins-classes:load"
+        "#load:_private/load"
     ]
 }

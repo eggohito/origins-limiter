@@ -4,5 +4,6 @@
     "rising_action": {
         "type": "origins:execute_command",
         "command": "origin set @s origins-limiter:confirm/origins-classes/class origins-limiter:pass"
-    }
+    },
+    "hidden": true
 }
