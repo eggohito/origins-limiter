@@ -8,7 +8,7 @@
 
 
 #  Check if the score of the `updateInterval` variable has been changed
-execute unless score updateInterval o-l.main = #updateInterval o-l.main run function origins-limiter:private/interval/sync
+execute unless score updateInterval o-l.main = #updateInterval o-l.main run function origins-limiter:private/sync/update_interval
 
 
 #   Call the `#origins-limiter:tick` function tag if the specified interval value has been reached

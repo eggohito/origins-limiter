@@ -1,28 +1,50 @@
 {
-    "type": "origins:action_over_time",
-    "interval": 1,
-    "rising_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:give",
-                "stack": {
-                    "item": "origins:orb_of_origin"
-                }
-            },
-            {
-                "type": "origins:execute_command",
-                "command": "advancement revoke @s only origins-limiter:status/restrict"
-            },
-            {
-                "type": "origins:execute_command",
-                "command": "function #origins-limiter:status/restrict"
-            }
-        ]
+    "type": "origins:multiple",
+    "restrict_delay": {
+        "type": "origins:cooldown",
+        "cooldown": 3,
+        "hud_render": {
+            "should_render": false
+        }
     },
-    "condition": {
-        "type": "origins:advancement",
-        "advancement": "origins-limiter:status/restrict"
+    "restrict_pre": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:trigger_cooldown",
+            "power": "*:*_restrict_delay"
+        },
+        "condition": {
+            "type": "origins:advancement",
+            "advancement": "origins-limiter:status/restrict"
+        }
+    },
+    "restrict_post": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "give @s origins:orb_of_origin"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function #origins-limiter:status/restrict"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "advancement revoke @s only origins-limiter:status/restrict"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_restrict_delay",
+            "comparison": "==",
+            "compare_to": 1
+        }
     },
     "hidden": true
 }
