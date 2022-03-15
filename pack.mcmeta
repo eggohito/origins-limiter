@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "pack_format": 6,
+        "authors": [
+            "eggohito"
+        ],
+        "description": "A datapack that can limit how many players can have a certain origin"
+    }
+}
