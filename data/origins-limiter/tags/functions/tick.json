@@ -1,14 +1,3 @@
 {
-    "values": [
-        "origins-limiter:can_pick/origins/arachnid",
-        "origins-limiter:can_pick/origins/avian",
-        "origins-limiter:can_pick/origins/blazeborn",
-        "origins-limiter:can_pick/origins/elytrian",
-        "origins-limiter:can_pick/origins/enderian",
-        "origins-limiter:can_pick/origins/feline",
-        "origins-limiter:can_pick/origins/human",
-        "origins-limiter:can_pick/origins/merling",
-        "origins-limiter:can_pick/origins/phantom",
-        "origins-limiter:can_pick/origins/shulk"
-    ]
+    "values": []
 }
