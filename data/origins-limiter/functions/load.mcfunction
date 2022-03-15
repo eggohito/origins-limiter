@@ -27,7 +27,7 @@ execute unless score #loaded o-l.main = #loaded o-l.main run tellraw @a {"transl
 execute if score #loaded o-l.main = #loaded o-l.main run tellraw @a[tag = origins-limiter.debugger] {"translate": "[= Reloaded \"Limiter (Origins)\" @ v%1$s.%2$s.%3$s]", "color": "gold", "with": [{"nbt": "root.semver.major", "storage": "origins-limiter:main"}, {"nbt": "root.semver.minor", "storage": "origins-limiter:main"}, {"nbt": "root.semver.patch", "storage": "origins-limiter:main"}]}
 
 
-scoreboard players set origins-limiter load.status 1
+scoreboard players set origins-limiter load 1
 
 scoreboard players set #loaded o-l.main 1
 
