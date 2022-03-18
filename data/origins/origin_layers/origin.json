@@ -1,5 +1,14 @@
 {
     "origins": [
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": false
+            },
+            "origins": [
+                "origins-limiter:empty"
+            ]
+        },
         "example:origin"
     ]
 }
