@@ -1,5 +1,19 @@
 {
+    "order": 1,
+    "name": "confirmed Origin",
+    "missing_name": "None",
+    "missing_description": " ",
     "origins": [
+        {
+            "condition": {
+                "type": "origins:constant",
+                "value": false
+            },
+            "origins": [
+                "origins-limiter:empty",
+                "origins-limiter:pass"
+            ]
+        },
         {
             "condition": {
                 "type": "origins:and",
@@ -47,5 +61,7 @@
                 "origins-limiter:status/restrict"
             ]
         }
-    ]
+    ],
+    "auto_choose": true,
+    "hidden": false
 }
