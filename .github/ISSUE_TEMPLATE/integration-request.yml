@@ -1,0 +1,24 @@
+name: Integration Request
+description: Request a datapack/addon to integrate the datapack library to.
+title: "[REQUEST] <datapack/addon name>"
+labels: [request]
+assignees:
+  - eggohito
+body:
+  - type: input
+    id: authors
+    attributes:
+      label: Author(s)
+      description: "The author(s) of the datapack/addon."
+      placeholder: "e.g: Apace"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Datapack/addon Download link
+      description: "The download link for the datapack/addon you're requesting integration of."
+      placeholder: "e.g: https://www.curseforge.com/minecraft/mc-mods/origins"
+    validations:
+      required: true
+      
