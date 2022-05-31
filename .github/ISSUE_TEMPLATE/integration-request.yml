@@ -8,7 +8,7 @@ body:
   - type: input
     id: authors
     attributes:
-      label: Author(s)
+      label: "Author(s):"
       description: "The author(s) of the datapack/addon."
       placeholder: "e.g: Apace"
     validations:
@@ -16,9 +16,16 @@ body:
   - type: input
     id: link
     attributes:
-      label: Datapack/addon Download link
+      label: "Datapack/Addon Download link:"
       description: "The download link for the datapack/addon you're requesting integration of."
       placeholder: "e.g: https://www.curseforge.com/minecraft/mc-mods/origins"
     validations:
       required: true
-      
+  - type: textarea
+    id: additional-requests
+    attributes:
+      label: "Additional requests:"
+      description: "Any additional requests regarding this integration request."
+      placeholder: "e.g: The ... origin should have a max player count of 2."
+    validations:
+      required: false
