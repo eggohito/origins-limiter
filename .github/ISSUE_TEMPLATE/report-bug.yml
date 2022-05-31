@@ -8,21 +8,21 @@ body:
   - type: textarea
     id: current-behavior
     attributes:
-      label: Description of the issue/bug:
+      label: "Description of the issue/bug:"
       description: "Please describe the issue/bug you're experiencing. Providing screenshots/recordings would also help!"
     validations:
       required: true
   - type: textarea
     id: expected-behavior
     attributes:
-      label: Expected behavior:
+      label: "Expected behavior:"
       description: "Please describe what you expect to happen instead."
     validations:
       required: false
   - type: textarea
     id: reproduction-steps
     attributes:
-      label: How to reproduce:
+      label: "How to reproduce:"
       description: "Please provide the steps on how to reproduce the issue/bug."
       value: |
         1. ...
