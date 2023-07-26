@@ -1,9 +1,0 @@
-{
-    "order": 2147483647,
-    "name": "Limiter",
-    "replace": true,
-    "origins": [
-        "origins-limiter:internal"
-    ],
-    "auto_choose": true
-}

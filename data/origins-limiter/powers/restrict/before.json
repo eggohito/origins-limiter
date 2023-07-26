@@ -1,0 +1,29 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_gained": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scoreboard players reset #layers_to_restrict origins-limiter"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s remove origins-limiter.selection.done"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tellraw @s[tag = origins-limiter.debugger] {\"text\": \"Validating origin layers to restrict...\", \"color\": \"gray\", \"italic\": true}"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "function #origins-limiter:api/restrict/layers/before"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tellraw @s[tag = origins-limiter.debugger] {\"translate\": \"Validated %s origin layer(s) to restrict!\", \"color\": \"gray\", \"italic\": true, \"with\": [{\"score\": {\"name\": \"#layers_to_restrict\", \"objective\": \"origins-limiter\"}}]}"
+            }
+        ]
+    },
+    "hidden": true
+}

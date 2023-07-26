@@ -1,0 +1,7 @@
+{
+    "criteria": {
+        "exists": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}
