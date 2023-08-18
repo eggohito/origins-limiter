@@ -10,8 +10,8 @@
 
 
 #   Add a temporary tag if the player has the `origins-limiter:cancel` origin
-#   in the `origins:origin` origin layer
-execute if data entity @s cardinal_components."origins:origin".OriginLayers[{Origin: "origins-limiter:cancel", Layer: "origins:origin"}] run tag @s add origins-limiter.cancelled
+#   in the `origins-limiter:restrict/origins/origin` origin layer
+execute if data entity @s cardinal_components."origins:origin".OriginLayers[{Origin: "origins-limiter:cancel", Layer: "origins-limiter:restrict/origins/origin"}] run tag @s add origins-limiter.cancelled
 
 
 #   Display a message and set the origin of the player in the origins:origin
