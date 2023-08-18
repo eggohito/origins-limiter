@@ -1,0 +1,65 @@
+{
+	"Origin Limiter Template (Function)": {
+		"scope": "mcfunction",
+		"prefix": "limiter.fnc",
+		"description": "The function template for limiting origins.",
+		"body": [
+			"#   Set the initial max. player limit for the origin",
+			"execute unless score ${1:namespace}:${2:path} o-l.max = ${1:namespace}:${2:path} o-l.max run scoreboard players set ${1:namespace}:${2:path} o-l.max 1",
+			"",
+			"",
+			"#   Count how many players have the origin currently",
+			"execute store result score ${1:namespace}:${2:path} o-l.cur if entity @a[tag = origins-limiter.selection.done, advancements = {origins-limiter:ignored = false}, nbt = {cardinal_components: {\"origins:origin\": {OriginLayers: [{Origin: \"${1:namespace}:${2:path}\"}]}}}]",
+			"",
+			"",
+			"#   If the current count of players that have the origin is greater than the max. player limit for the origin,",
+			"#   restrict any future players from choosing the origin. Otherwise, lift the restriction",
+			"execute if score ${1:namespace}:${2:path} o-l.cur >= ${1:namespace}:${2:path} o-l.max run advancement grant @a only origins-limiter:restrict/origin/${1:namespace}/${2:path}",
+			"",
+			"execute if score ${1:namespace}:${2:path} o-l.cur < ${1:namespace}:${2:path} o-l.max run advancement revoke @a only origins-limiter:restrict/origin/${1:namespace}/${2:path}",
+			""
+		]
+	},
+	"Origin Limiter Template (Advancement)": {
+		"scope": "json",
+		"prefix": "limiter.adv",
+		"description": "The advancement template for limiting origins.",
+		"body": [
+			"{",
+			"    \"parent\": \"origins-limiter:restrict/layer/${1:namespace}/${2:path}\",",
+			"    \"criteria\": {",
+			"        \"dummy\": {",
+			"            \"trigger\": \"minecraft:impossible\"",
+			"        }",
+			"    }",
+			"}"
+		]
+	},
+	"Origin Limiter Template (Layer)": {
+		"scope": "json",
+		"prefix": "limiter.lyr",
+		"description": "The conditioned origin template for limiting origins.",
+		"body": [
+			"{",
+			"    \"condition\": {",
+			"        \"type\": \"origins:and\",",
+			"        \"conditions\": [",
+			"            {",
+			"                \"type\": \"origins:advancement\",",
+			"                \"advancement\": \"origins-limiter:restrict/origin/${1:namespace}/${2:path}\",",
+			"                \"inverted\": true",
+			"            },",
+			"            {",
+			"                \"type\": \"origins:origin\",",
+			"                \"origin\": \"${1:namespace}:${2:path}\",",
+			"                \"layer\": \"origins:origin\"",
+			"            }",
+			"        ]",
+			"    },",
+			"    \"origins\": [",
+			"        \"${1:namespace}:${2:path}\"",
+			"    ]",
+			"}"
+		]
+	}
+}

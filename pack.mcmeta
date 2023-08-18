@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "pack_format": 10,
+        "authors": [
+            "eggohito"
+        ],
+        "description": "An examplepack for limiting how many players can choose the base origins."
+    }
+}

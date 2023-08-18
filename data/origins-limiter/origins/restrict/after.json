@@ -1,0 +1,10 @@
+{
+    "powers": [
+        "origins-limiter:restrict/after"
+    ],
+    "icon": {
+        "item": "minecraft:structure_block"
+    },
+    "name": "End",
+    "description": "The origin selection process has ended."
+}

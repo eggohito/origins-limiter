@@ -1,0 +1,10 @@
+{
+    "order": -2147483648,
+    "origins": [
+        "origins-limiter:restrict/before"
+    ],
+    "auto_choose": true,
+    "name": "origins",
+    "hidden": true,
+    "replace": true
+}

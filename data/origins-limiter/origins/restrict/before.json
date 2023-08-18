@@ -1,0 +1,10 @@
+{
+    "powers": [
+        "origins-limiter:restrict/before"
+    ],
+    "icon": {
+        "item": "minecraft:structure_block"
+    },
+    "name": "Start",
+    "description": "Click to start the origin selection process."
+}

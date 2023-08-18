@@ -1,0 +1,8 @@
+{
+    "powers": [],
+    "icon": {
+        "item": "minecraft:chain_command_block"
+    },
+    "name": "Pass",
+    "description": "Select this origin ONLY if the origin you want to choose is not registered in the restriction layer."
+}
