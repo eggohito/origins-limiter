@@ -4,7 +4,7 @@
         {
             "condition": {
                 "type": "origins:advancement",
-                "advancement": "origins-limiter:restrict/layer/origins/origin",
+                "advancement": "origins-limiter:restrict/layer/origins-classes/class",
                 "inverted": true
             },
             "origins": [
@@ -14,7 +14,7 @@
         {
             "condition": {
                 "type": "origins:advancement",
-                "advancement": "origins-limiter:restrict/layer/origins/origin"
+                "advancement": "origins-limiter:restrict/layer/origins-classes/class"
             },
             "origins": [
                 "origins-limiter:cancel"
@@ -26,7 +26,7 @@
                 "conditions": [
                     {
                         "type": "origins:advancement",
-                        "advancement": "origins-limiter:restrict/layer/origins/origin"
+                        "advancement": "origins-limiter:restrict/layer/origins-classes/class"
                     },
                     {
                         "type": "origins:advancement",
@@ -50,7 +50,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:archer",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -70,7 +70,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:beastmaster",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -90,7 +90,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:blacksmith",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -110,7 +110,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:cleric",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -130,7 +130,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:cook",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -150,7 +150,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:explorer",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -170,7 +170,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:farmer",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -190,7 +190,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:lumberjack",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -210,7 +210,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:merchant",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -230,7 +230,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:miner",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -250,7 +250,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:nitwit",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -270,7 +270,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:rancher",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -290,7 +290,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:rogue",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -310,7 +310,7 @@
                     {
                         "type": "origins:origin",
                         "origin": "origins-classes:warrior",
-                        "layer": "origins:origin"
+                        "layer": "origins-classes:class"
                     }
                 ]
             },
@@ -318,5 +318,8 @@
                 "origins-classes:warrior"
             ]
         }
-    ]
+    ],
+    "auto_choose": true,
+    "name": "layer.origins-classes.class.name",
+    "hidden": true
 }

@@ -8,7 +8,7 @@
 
 
 #   Check if the player has the `origins-classes:class` origin layer in its NBT
-advancement revoke @s from origins-limiter:restrict/layer/origins/origin
+advancement revoke @s from origins-limiter:restrict/layer/origins-classes/class
 
 execute if data entity @s cardinal_components."origins:origin".OriginLayers[{Layer: "origins-classes:class"}] run advancement grant @s only origins-limiter:restrict/layer/origins-classes/class
 

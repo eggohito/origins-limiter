@@ -3,7 +3,7 @@ execute unless score origins-classes:cleric o-l.max = origins-classes:cleric o-l
 
 
 #   Count how many players have the origin currently
-execute store result score origins-classes:cleric o-l.cur if entity @a[tag = origins-limiter.selection.done, advancements = {origins-limiter:ignored = false}, nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins-classes:cleric"}]}}}]
+execute store result score origins-classes:cleric o-l.cur if entity @a[tag = origins-limiter.selection.done, tag = !origins-limiter.ignored, nbt = {cardinal_components: {"origins:origin": {OriginLayers: [{Origin: "origins-classes:cleric"}]}}}]
 
 
 #   If the current count of players that have the origin is greater than the max. player limit for the origin,
