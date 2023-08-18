@@ -1,8 +1,0 @@
-{
-    "parent": "origins-limiter:restrict/layer/origins/origin",
-    "criteria": {
-        "dummy": {
-            "trigger": "minecraft:impossible"
-        }
-    }
-}

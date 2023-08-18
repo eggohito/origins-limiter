@@ -1,14 +1,5 @@
 {
     "values": [
-        "origins-limiter:restrict/origin/origins/arachnid",
-        "origins-limiter:restrict/origin/origins/avian",
-        "origins-limiter:restrict/origin/origins/blazeborn",
-        "origins-limiter:restrict/origin/origins/elytrian",
-        "origins-limiter:restrict/origin/origins/enderian",
-        "origins-limiter:restrict/origin/origins/feline",
-        "origins-limiter:restrict/origin/origins/human",
-        "origins-limiter:restrict/origin/origins/merling",
-        "origins-limiter:restrict/origin/origins/phantom",
-        "origins-limiter:restrict/origin/origins/shulk"
+        
     ]
 }
