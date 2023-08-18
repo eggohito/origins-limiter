@@ -1,0 +1,8 @@
+{
+    "powers": [],
+    "icon": {
+        "item": "minecraft:barrier"
+    },
+    "name": "Cancel",
+    "description": "Cancel the process of picking an origin."
+}

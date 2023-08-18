@@ -1,0 +1,8 @@
+{
+    "parent": "origins-limiter:restrict/layer/origins-classes/class",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

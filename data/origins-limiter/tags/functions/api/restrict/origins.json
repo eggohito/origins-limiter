@@ -1,0 +1,18 @@
+{
+    "values": [
+        "origins-limiter:restrict/origin/origins-classes/archer",
+        "origins-limiter:restrict/origin/origins-classes/beastmaster",
+        "origins-limiter:restrict/origin/origins-classes/blacksmith",
+        "origins-limiter:restrict/origin/origins-classes/cleric",
+        "origins-limiter:restrict/origin/origins-classes/cook",
+        "origins-limiter:restrict/origin/origins-classes/explorer",
+        "origins-limiter:restrict/origin/origins-classes/farmer",
+        "origins-limiter:restrict/origin/origins-classes/lumberjack",
+        "origins-limiter:restrict/origin/origins-classes/merchant",
+        "origins-limiter:restrict/origin/origins-classes/miner",
+        "origins-limiter:restrict/origin/origins-classes/nitwit",
+        "origins-limiter:restrict/origin/origins-classes/rancher",
+        "origins-limiter:restrict/origin/origins-classes/rogue",
+        "origins-limiter:restrict/origin/origins-classes/warrior"
+    ]
+}

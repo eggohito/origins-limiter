@@ -1,0 +1,322 @@
+{
+    "order": 11,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "origins-limiter:restrict/layer/origins/origin",
+                "inverted": true
+            },
+            "origins": [
+                "origins-limiter:missing_layer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:advancement",
+                "advancement": "origins-limiter:restrict/layer/origins/origin"
+            },
+            "origins": [
+                "origins-limiter:cancel"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/layer/origins/origin"
+                    },
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:can_pass"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-limiter:pass"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/archer",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:archer",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:archer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/beastmaster",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:beastmaster",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:beastmaster"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/blacksmith",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:blacksmith",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:blacksmith"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/cleric",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:cleric",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:cleric"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/cook",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:cook",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:cook"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/explorer",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:explorer",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:explorer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/farmer",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:farmer",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:farmer"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/lumberjack",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:lumberjack",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:lumberjack"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/merchant",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:merchant",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:merchant"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/miner",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:miner",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:miner"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/nitwit",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:nitwit",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:nitwit"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/rancher",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:rancher",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:rancher"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/rogue",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:rogue",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:rogue"
+            ]
+        },
+        {
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:advancement",
+                        "advancement": "origins-limiter:restrict/origin/origins-classes/warrior",
+                        "inverted": true
+                    },
+                    {
+                        "type": "origins:origin",
+                        "origin": "origins-classes:warrior",
+                        "layer": "origins:origin"
+                    }
+                ]
+            },
+            "origins": [
+                "origins-classes:warrior"
+            ]
+        }
+    ]
+}

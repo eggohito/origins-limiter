@@ -1,0 +1,10 @@
+{
+    "pack": {
+        "pack_format": 10,
+        "version": "4.0.0",
+        "authors": [
+            "eggohito"
+        ],
+        "description": "A datapack for limiting the how many players can choose a certain origin."
+    }
+}
