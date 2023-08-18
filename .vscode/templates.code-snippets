@@ -127,5 +127,64 @@
 			"    }",
 			"}"
 		]
+	},
+	"Origin Limiter (Layer Function Template [Before])": {
+		"scope": "mcfunction",
+		"prefix": "limiter.layer.function.before",
+		"description": "The template snippet for the function of the origin layer that would be limited (before its limited).",
+		"body": [
+			"#> ${1:this}",
+			"#",
+			"#   >   Check if the `${2:namespace}:${3:layer}` origin layer exists on the player",
+			"#",
+			"#   -   This is done to validate whether the origin layer should be restricted or not",
+			"#",
+			"#@within tag/function origins-limiter:api/restrict/layers/before",
+			"",
+			"",
+			"#   Check if the player has the `${2:namespace}:${3:layer}` origin layer in its NBT",
+			"advancement revoke @s from origins-limiter:restrict/layer/${2:namespace}/${3:layer}",
+			"",
+			"execute if data entity @s cardinal_components.\"origins:origin\".OriginLayers[{Layer: \"${2:namespace}:${3:layer}\"}] run advancement grant @s only origins-limiter:restrict/layer/${2:namespace}/${3:layer}",
+			"",
+			"",
+			"#   Increment the count of origin layers to restrict (for debugging purposes)",
+			"execute if entity @s[advancements = {origins-limiter:restrict/layer/${2:namespace}/${3:layer} = true}] run scoreboard players add #layers_to_restrict origins-limiter 1"
+		]
+	},
+	"Origin Limiter (Layer Function Template [After])": {
+		"scope": "mcfunction",
+		"prefix": "limiter.layer.function.after",
+		"description": "The template snippet for the function of the origin layer that would be limited (after it's limited).",
+		"body": [
+			"#> ${1:this}",
+			"#",
+			"#   >   Check if the player has cancelled the origin selection in the `${2:namespace}:${3:layer}` origin layer",
+			"#",
+			"#   -   Cancelled can either mean that the player has deliberately cancelled the process of picking an",
+			"#       origin, or that the process of picking an origin was automatically cancelled",
+			"#       (because the max player limit for the origin they have chosen has been reached)",
+			"#",
+			"#@within tag/function origins-limiter:api/restrict/layers/after",
+			"",
+			"",
+			"#   Add a temporary tag if the player has the `origins-limiter:cancel` origin",
+			"#   in the `origins-limiter:restrict/${2:namespace}/${3:layer}` origin layer",
+			"execute if data entity @s cardinal_components.\"origins:origin\".OriginLayers[{Origin: \"origins-limiter:cancel\", Layer: \"origins-limiter:restrict/${2:namespace}/${3:layer}\"}] run tag @s add origins-limiter.cancelled",
+			"",
+			"",
+			"#   Display a message and set the origin of the player in the ${2:namespace}:${3:layer}",
+			"#   origin layer to `origins-limiter:empty`",
+			"#",
+			"#   `origins-limiter:empty` is used in this case to prevent the player from choosing an",
+			"#   origin for the `${2:namespace}:${3:layer}` origin layer",
+			"execute if entity @s[tag = origins-limiter.cancelled] run tellraw @s {\"text\": \"Origin selection on '${2:namespace}:${3:layer}' origin layer has been cancelled.\", \"color\": \"red\"}",
+			"",
+			"execute if entity @s[tag = origins-limiter.cancelled] run origin set @s ${2:namespace}:${3:layer} origins-limiter:empty",
+			"",
+			"",
+			"#   Remove the temporary tag afterwards",
+			"tag @s remove origins-limiter.cancelled"
+		]
 	}
 }
