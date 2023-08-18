@@ -9,7 +9,7 @@
 			"",
 			"",
 			"#   Count how many players have the origin currently",
-			"execute store result score ${1:namespace}:${2:origin} o-l.cur if entity @a[tag = origins-limiter.selection.done, advancements = {origins-limiter:ignored = false}, nbt = {cardinal_components: {\"origins:origin\": {OriginLayers: [{Origin: \"${1:namespace}:${2:origin}\"}]}}}]",
+			"execute store result score ${1:namespace}:${2:origin} o-l.cur if entity @a[tag = origins-limiter.selection.done, tag = !origins-limiter.ignored, nbt = {cardinal_components: {\"origins:origin\": {OriginLayers: [{Origin: \"${1:namespace}:${2:origin}\"}]}}}]",
 			"",
 			"",
 			"#   If the current count of players that have the origin is greater than the max. player limit for the origin,",
