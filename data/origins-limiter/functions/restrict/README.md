@@ -20,6 +20,6 @@ data/origins-limiter/functions
     │
     └───origin
         └───&#60;namespace&#62;
-                &#60;path&#62;.json
+                &#60;path&#62;.mcfunction
 
 </pre>
